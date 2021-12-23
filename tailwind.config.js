@@ -13,20 +13,10 @@ module.exports = {
 			center: true,
 			padding: '1rem',
 		},
-		colors: {
-			mainBlue: '#002C5F',
-			secondBlue: '#00AAD2',
-			sand: '#E4DCD3',
-			transparent: 'transparent',
-			current: 'currentColor',
-			black: colors.black,
-			white: colors.white,
-			gray: colors.trueGray,
-			indigo: colors.indigo,
-			red: colors.rose,
-			yellow: colors.amber,
-		},
 		extend: {
+			colors: {
+				'cyan': 'rgb(14, 116, 144)',
+			},
 			fontFamily: {
 				sans: ['hyunday-st', ...defaultTheme.fontFamily.sans],
 			},
