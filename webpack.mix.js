@@ -15,7 +15,7 @@ if (mix.inProduction()) {
 	mix.sourceMaps().webpackConfig({ devtool: 'inline-source-map' });
 	mix.browserSync({
 		server: {
-			baseDir: "./dist",
+			baseDir: "dist",
 		},
 		files: ['dist/**/*.html', 'dist/css/styles.css', 'dist/js/scripts.js'],
 		notify: false
