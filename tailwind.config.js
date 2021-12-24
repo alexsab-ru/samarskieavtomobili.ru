@@ -14,6 +14,9 @@ module.exports = {
 			padding: '1rem',
 		},
 		extend: {
+			transitionProperty: {
+		        'height': 'height',
+		      },
 			colors: {
 				'cyan': 'rgb(14, 116, 144)',
 			},
