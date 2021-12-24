@@ -8,9 +8,14 @@
 	<link rel="icon" href="img/favicon.png">
 	<link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="flex flex-col min-h-full">
+<body 
+	class="flex flex-col min-h-full relative" 
+	x-data="{ 'isModalOpen': false }"
+	@keydown.escape="isModalOpen = false"
+	:class="{'overflow-hidden md:pr-[17px]': isModalOpen}"
+>
 
-	<header class="header sticky top-0 w-full bg-white z-50 shadow-lg" id="header">
+	<header class="header sticky top-0 w-full bg-white z-30 shadow-lg" id="header">
 		<div class="container h-full">
 			<div class="flex items-center justify-between h-full py-3">
 				<div class="logo">
@@ -29,7 +34,13 @@
 					<a href="https://vk.com/samarskieavtomobili" class="w-[30px] md:w-[48px]" target="_blank">
 						<img src="img/vk.png" alt="VK">
 					</a>
-					<button type="button" class="bg-cyan text-white text-xs md:text-base px-3 py-2 md:py-3 md:px-10 ml-2 md:ml-3">Обратная связь</button>
+					<button 
+						type="button" 
+						class="bg-cyan text-white text-xs md:text-base px-3 py-2 md:py-3 md:px-10 ml-2 md:ml-3 outline-none" 
+						@click="$refs.modalTitle.innerText='Обратная связь'; isModalOpen = true;"
+					>
+					Обратная связь
+					</button>
 				</div>
 
 			</div>
@@ -110,11 +121,11 @@
 
 							<aside x-show="open"
 								x-transition:enter="transition-[height] duration-500"
-						        x-transition:enter-start="h-0"
-						        x-transition:enter-end="h-auto"
-						        x-transition:leave="transition-[height]"
-						        x-transition:leave-start="h-auto"
-						        x-transition:leave-end="h-0"
+								x-transition:enter-start="h-0"
+								x-transition:enter-end="h-auto"
+								x-transition:leave="transition-[height]"
+								x-transition:leave-start="h-auto"
+								x-transition:leave-end="h-0"
 								class="lg:!block">
 								<nav>
 									<a href="#" class="lg:text-lg p-3 block transition duration-300 bg-cyan text-white">Главная</a>
@@ -183,6 +194,32 @@
 			</div>
 		</div>
 	</footer>
+
+	<!-- overlay -->
+	<div
+		class="overflow-y-auto"
+		style="background-color: rgba(0,0,0,0.7)"
+		x-show="isModalOpen"
+		:class="{ 'fixed inset-0 z-50 flex items-start justify-center': isModalOpen }"
+	>
+	<!-- dialog -->
+		<div
+		   class="max-w-[450px] w-full bg-white shadow-2xl m-4 my-12 sm:m-8 px-5 p-4 sm:py-8 relative z-50"
+		   x-show="isModalOpen"
+		   @click.away="isModalOpen = false"
+	  	>
+	  	<button class="absolute top-1 right-1 text-xl p-1 px-3" @click="isModalOpen = false;">&times;</button>
+	  	<h3 class="text-center mb-5" x-ref="modalTitle"></h3>
+
+		<form>
+			<input type="text" name="name" class="w-full mb-5 px-2 py-3 border border-gray-400 focus:border-gray-600 focus:outline-none" placeholder="Ваше имя">
+			<input type="tel" name="phone" class="w-full mb-5 px-2 py-3 border border-gray-400 focus:border-gray-600 focus:outline-none" required placeholder="Ваше телефон *">
+			<button type="submit" class="w-full bg-cyan text-white text-base px-2 py-3 border border-cyan mb-5">Отправить</button>
+			<small class="block text-xs text-center text-gray-800">Нажимая на кнопку действия, я соглашаюсь на <br><a href="#" target="_blank" class="text-cyan underline transition hover:no-underline">обработку персональных данных</a></small>
+		</form>      
+		  
+	  	</div><!-- /dialog -->
+	</div><!-- /overlay -->
 
 	<script src="js/scripts.js"></script>
 </body>
