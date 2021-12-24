@@ -40,11 +40,11 @@
 }
 
 .swiper-lazy-preloader{
-	@apply border-cyan border-t-transparent top-20;
+	@apply border-cyan border-t-transparent top-[50%] translate-y-[-50%];
 }
 
-h2{
-	@apply font-bold text-xl mb-1 text-gray-700
+h3{
+	@apply font-bold text-xl mb-1 text-gray-800
 }
 
 p{

@@ -5,7 +5,7 @@ Swiper.use([Lazy, Pagination, Navigation]);
 const bannerSlider = new Swiper('.banner-slider', {
 	loop: true,
 	slidesPerView: 1,
-	speed: 1000,
+	speed: 600,
 	preloadImages: false,
 	lazy: true,
 	navigation: {
@@ -18,15 +18,6 @@ const bannerSlider = new Swiper('.banner-slider', {
 			clickable: true,
 	},
 	breakpoints: {
-		320: {
-			pagination: false
-		},
-		580: {
-			pagination: {
-				el: '.swiper-pagination',
-					type: 'bullets', //'bullets' | 'fraction' | 'progressbar' | 'custom'
-					clickable: true,
-				},
-			},
+		
 		}
 })
