@@ -5,11 +5,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Продажа авто в Самаре, автоцентры и автосалоны Самары по продаже новых автомобилей</title>
 	<meta name="description" content="Группа компаний «Самарские автомобили» предлагает новые авто в Самаре! Продажа новых автомобилей осуществляется на правах официального дилера в автосалонах Самары.">
-	<link rel="icon" href="img/favicon.png">
-	<link rel="stylesheet" href="css/styles.css">
+	<link rel="icon" href="../img/favicon.png">
+	<link rel="stylesheet" href="../css/styles.css">
 </head>
 <body 
-	class="flex flex-col min-h-full relative text-gray-800" 
+	class="flex flex-col min-h-full relative" 
 	x-data="{ 'isModalOpen': false }"
 	@keydown.escape="isModalOpen = false"
 	:class="{'overflow-hidden md:pr-[17px]': isModalOpen}"
@@ -20,7 +20,7 @@
 			<div class="flex items-center justify-between h-full py-3">
 				<div class="logo">
 					<a href="index.html">
-						<img src="img/logo.png" class="w-[100px] sm:w-[150px] md:w-[250px]" alt="Самарские Автомобили">
+						<img src="../img/logo.png" class="w-[100px] sm:w-[150px] md:w-[250px]" alt="Самарские Автомобили">
 					</a>
 					<span class="hidden md:block text-center text-xs text-gray-800 mt-2"><b>Infiniti,</b> <b>Jaguar,</b> <b>Land Rover,</b> <b>Nissan,</b> <b>Polaris</b></span>
 				</div>
@@ -32,7 +32,7 @@
 
 				<div class="flex items-center">
 					<a href="https://vk.com/samarskieavtomobili" class="w-[30px] md:w-[48px]" target="_blank">
-						<img src="img/vk.png" alt="VK">
+						<img src="../img/vk.png" alt="VK">
 					</a>
 					<button 
 						type="button" 
@@ -58,7 +58,7 @@
 							<div class="banner-slider swiper h-full">
 								<div class="swiper-wrapper h-full">
 									<div class="banner-slide swiper-slide">								
-										<img data-src="img/banners/1000x300-range-rover.jpg" class="h-full w-full object-cover object-center swiper-lazy" />
+										<img data-src="../img/banners/1000x300-vygoda-do-500-000.jpg" class="h-full w-full object-cover object-center swiper-lazy" />
 										<div class="swiper-lazy-preloader"></div>
 									</div>
 								</div>
@@ -75,26 +75,26 @@
 					<div class="flex flex-wrap justify-center gap-x-3 sm:gap-0 sm:justify-around">
 						
 						<a href="#" class="w-[26%] sm:w-[15%] transition duration-500 hover:scale-110">
-							<img src="img/brands/infiniti.jpg" alt="">
+							<img src="../img/brands/infiniti.jpg" alt="">
 						</a>
 						<a href="#" class="w-[26%] sm:w-[15%] transition duration-500 hover:scale-110">
-							<img src="img/brands/jaguar.jpg" alt="">
+							<img src="../img/brands/jaguar.jpg" alt="">
 						</a>
 						<a href="#" class="w-[26%] sm:w-[15%] transition duration-500 hover:scale-110">
-							<img src="img/brands/land-rover.jpg" alt="">
+							<img src="../img/brands/land-rover.jpg" alt="">
 						</a>
 						<a href="#" class="w-[26%] sm:w-[15%] transition duration-500 hover:scale-110">
-							<img src="img/brands/nissan.jpg" alt="">
+							<img src="../img/brands/nissan.jpg" alt="">
 						</a>
 						<a href="#" class="w-[26%] sm:w-[15%] transition duration-500 hover:scale-110">
-							<img src="img/brands/polaris.jpg" alt="">
+							<img src="../img/brands/polaris.jpg" alt="">
 						</a>
 
 					</div>
 				</section>
 
 				<section class="py-5 lg:py-10">
-					<div class="grid grid-cols-6 xl:grid-cols-5" x-data="{open: false, submenu: false}">
+					<div class="grid grid-cols-6 xl:grid-cols-5" x-data="{open: false, submenu: true}">
 						
 						<div class="col-span-6 lg:col-span-2 xl:col-span-1 mb-6 lg:mb-0 border-2 lg:border-0 lg:border-r lg:border-cyan">
 
@@ -132,7 +132,7 @@
 										><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>						
 									</a>
 									<div x-show="submenu">
-										<a href="centers/south.html" class="p-3 pl-6 block transition duration-300 hover:bg-gray-200">на Южном шоссе</a>
+										<a href="centers/south.html" class="p-3 pl-6 block transition duration-300 bg-cyan text-white">на Южном шоссе</a>
 										<a href="centers/infiniti.html" class="p-3 pl-6 block transition duration-300 hover:bg-gray-200">Infiniti на Московском шоссе</a>
 										<a href="centers/aurora.html" class="p-3 pl-6 block transition duration-300 hover:bg-gray-200">Jaguar Land Rover на Авроре</a>
 									</div>
@@ -141,7 +141,7 @@
 									<a href="./about.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">О компании</a>
 									<a href="job.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Наши вакансии</a>
 									<a href="carrepair.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Кузовной ремонт</a>
-									<a href="carcare.html" class="lg:text-lg p-3 block transition duration-300 bg-cyan text-white">Авто Уход</a>
+									<a href="carcare.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Авто Уход</a>
 									<a href="spo_serv.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Акции сервиса</a>
 									<a href="specials.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Спецпредложения</a>
 								</nav>
@@ -149,61 +149,53 @@
 						</div>
 
 						<div class="col-span-6 lg:col-span-4 lg:px-5">
-							<h2>Авто Уход</h2>
+							<h2>Автоцентры на Южном шоссе</h2>
 
-							<img src="img/pages/carcare/1.jpg" alt="ALT" class="max-w-full mx-auto mb-6">
+							<h3>Автоцентр Nissan</h3>
 
-							<h3>Профессиональный уход за Вашим автомобилем:</h3>
-							<ul>
-								<li>Высококлассное оборудование</li>
-								<li>Квалифицированный персонал</li>
-								<li>Оригинальные средства по чистке автомобилей</li>
-								<li>Индивидуальный подход к каждому клиенту</li>
-								<li>Комплексная мойка / химчистка по 23 пунктам</li>
-								<li>Бесплатный WI FI</li>
-								<li>Пока автомобиль находится на мойке Вы можете воспользоваться персональным тест-драйвом на автомобилях Jaguar или Land Rover</li>
-							</ul>
+							<div class="flex flex-wrap items-start mb-5">
+								<img src="../img/pages/centers/nissanugfasad2.jpg" alt="ALT" class="mr-5 mb-5 object-cover object-center">
+								<p class="w-full lg:w-auto">
+									<b>Адрес:&nbsp;</b>443085, Самара, Южное шоссе, 12<br>
+									<b>Телефон: </b><a href="tel:+78469936600">+7&nbsp;(846) 993-66-00</a><br>
+									<b>e-mail:</b><span>&nbsp;</span><a href="mailto:sales@nissan.samara-ug.ru">
+									<font color="blue">sales@nissan.samara-ug.ru</font>
+									</a>,&nbsp;<a href="mailto:aftersales@nissan.samara-ug.ru">
+									<font color="blue">aftersales@nissan.samara-ug.ru</font>
+									</a><br>
+									<b>Сайт: </b><a href="http://www.nissansamara.ru/" target="_blank">
+									<font color="blue">www.nissansamara.ru</font>
+									</a><b> </b><br>
+									<b>Часы работы:</b> <br>
+									Пн-Сб: 9:00 — 20:00 &nbsp;<br>
+									Вс: 9:00 — 18:00 (без перерывов и выходных) <br>
+									<a 
+										href="#" 
+										target="_blank"
+										@click.prevent="$refs.modalTitle.innerText='Записаться на тест-драйв'; isModalOpen = true;"
+									>
+									<font color="blue">Записаться на тест-драйв »</font>
+									</a>
+								</p>
+							</div>
 
-							<p><b>Подробнее&nbsp;<a href="tel:+78462073377" class="text-cyan underline transition hover:no-underline whitespace-nowrap">+7 (846) 207 33 77</a></b></p>
+							<h3>Polaris</h3>
+							<div class="flex flex-wrap items-start mb-5">
+								<img src="../img/pages/centers/salon_polaris.jpg" alt="ALT" class="mr-5 mb-5 object-cover object-center">
 
-							<div class="flex flex-wrap items-stretch mb-5 gap-0 sm:gap-3 xl:gap-4 2xl:gap-5">
-
-								<div class="flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[49%]">
-									<img src="img/pages/carcare/001.jpg" alt="ALT" class="mb-2 flex-grow">
-									<b>Чистка солнцезащитных козырьков</b>
-								</div>
-								<div class="flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[49%]">
-									<img src="img/pages/carcare/002.jpg" alt="ALT" class="mb-2 flex-grow">
-									<b>Чистка обивки сидений</b>
-								</div>
-								<div class="flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[49%]">
-									<img src="img/pages/carcare/003.jpg" alt="ALT" class="mb-2 flex-grow">
-									<b>Чистка ковровых покрытий</b>
-								</div>
-								<div class="flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[49%]">
-									<img src="img/pages/carcare/004.jpg" alt="ALT" class="mb-2 flex-grow">
-									<b>Чистка воздуховодов</b>
-								</div>
-								<div class="flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[49%]">
-									<img src="img/pages/carcare/005.jpg" alt="ALT" class="mb-2 flex-grow">
-									<b>Мойка колесных дисков, арок. Доведение до блеска.</b>
-								</div>
-								<div class="flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[49%]">
-									<img src="img/pages/carcare/006.jpg" alt="ALT" class="mb-2 flex-grow">
-									<b>Детальная чистка панели приборов и консоли</b>
-								</div>
-								<div class="flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[49%]">
-									<img src="img/pages/carcare/007.jpg" alt="ALT" class="mb-2 flex-grow">
-									<b>Детальная чистка панели приборов и консоли</b>
-								</div>
-								<div class="flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[49%]">
-									<img src="img/pages/carcare/008.jpg" alt="ALT" class="mb-2 flex-grow">
-									<b>Устранение битумных загрязнений с кузова автомобиля</b>
-								</div>
-								<div class="flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[49%]">
-									<img src="img/pages/carcare/009.jpg" alt="ALT" class="mb-2 flex-grow">
-									<b>Бережная мойка моторного отсека</b>
-								</div>
+								<p class="w-full lg:w-auto">
+									<b>Адрес:</b> 443085, Южное шоссе 12. Напротив ТК "Амбар", 2-ая линия автосалонов. <br>
+									<b>Телефон:&nbsp;</b><a href="tel:+78469934000">+7 (846) 993-4000</a><br>
+									<b>e-mail:</b><span>&nbsp;</span><a href="mailto:sales@polarissamara.ru">
+									<font color="blue">sales@polarissamara.ru</font>
+									</a><br>
+									<b>Сайт:</b>&nbsp;<a href="http://www.polarissamara.ru/" target="_blank">
+									<font color="#0000ff">www.polarissamara.ru</font>
+									</a><br>
+									<b>Часы работы:</b><br>
+									Пн-Сб: 9:00 — 20:00 &nbsp;<br>
+									Вс: 9:00 — 18:00 (без перерывов и выходных) <br>
+								</p>
 
 							</div>
 							
@@ -273,6 +265,6 @@
 	  	</div><!-- /dialog -->
 	</div><!-- /overlay -->
 
-	<script src="js/scripts.js"></script>
+	<script src="../js/scripts.js"></script>
 </body>
 </html>

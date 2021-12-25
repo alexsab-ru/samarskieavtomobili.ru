@@ -106,7 +106,7 @@
 				</section>
 
 				<section class="py-5 lg:py-10">
-					<div class="grid grid-cols-6 xl:grid-cols-5" x-data="{open: false}">
+					<div class="grid grid-cols-6 xl:grid-cols-5" x-data="{open: false, submenu: false}">
 						
 						<div class="col-span-6 lg:col-span-2 xl:col-span-1 mb-6 lg:mb-0 border-2 lg:border-0 lg:border-r lg:border-cyan">
 
@@ -129,7 +129,25 @@
 								class="lg:!block">
 								<nav>
 									<a href="index.html" class="lg:text-lg p-3 block transition duration-300 bg-cyan text-white">Главная</a>
-									<a href="#" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Автоцентры</a>
+									<a 
+										href="#" 
+										class="relative lg:text-lg p-3 block transition duration-300 hover:bg-gray-200"
+										@click.prevent="submenu = !submenu;"
+										:class="{'bg-gray-200': submenu}"
+									>
+										Автоцентры
+										<svg xmlns="http://www.w3.org/2000/svg" 
+											class="h-5 w-5 absolute right-3 top-4 fill-current opacity-80 transition duration-300" 
+											viewBox="0 0 20 20" 
+											fill="currentColor"
+											:class="{'rotate-90': submenu}"
+										><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>						
+									</a>
+									<div x-show="submenu">
+										<a href="centers/south.html" class="p-3 pl-6 block transition duration-300 hover:bg-gray-200">на Южном шоссе</a>
+										<a href="centers/infiniti.html" class="p-3 pl-6 block transition duration-300 hover:bg-gray-200">Infiniti на Московском шоссе</a>
+										<a href="centers/aurora.html" class="p-3 pl-6 block transition duration-300 hover:bg-gray-200">Jaguar Land Rover на Авроре</a>
+									</div>
 									<a href="credit.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Кредит и лизинг</a>
 									<a href="https://probegcentr.ru/" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200" target="_blank">Автомобили с пробегом</a>
 									<a href="about.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">О компании</a>
