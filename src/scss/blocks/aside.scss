@@ -22,3 +22,6 @@ aside{
 		}
 	}
 }
+@media (max-width: 1023px) {
+	[x-cloak] { display: none !important; }
+}
