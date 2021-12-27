@@ -71,3 +71,15 @@ ul li{
 ol li{
 	@apply ml-4 list-decimal mb-1
 }
+
+a{
+	color: blue;
+}
+
+aside a{
+	@apply text-gray-800;
+}
+
+footer a{
+	@apply text-white text-opacity-80;
+}
