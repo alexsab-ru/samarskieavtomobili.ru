@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="../css/styles.css">
 </head>
 <body 
-	class="flex flex-col min-h-full relative" 
+	class="flex flex-col min-h-full relative text-gray-800" 
 	x-data="{ menuOpen: false, isModalOpen: false }"
 	@keydown.escape="isModalOpen = false"
 	:class="{'overflow-hidden md:pr-[17px]': isModalOpen}"
@@ -19,7 +19,7 @@
 		<div class="container h-full">
 			<div class="flex items-center justify-between h-full py-3">
 				<div class="logo">
-					<a href="../index.html">
+					<a href="/">
 						<img src="../img/logo.png" class="w-[100px] sm:w-[150px] md:w-[250px]" alt="Самарские Автомобили">
 					</a>
 					<span class="hidden md:block text-center text-xs text-gray-800 mt-2"><b>Infiniti,</b> <b>Jaguar,</b> <b>Land Rover,</b> <b>Nissan,</b> <b>Polaris</b></span>
@@ -57,10 +57,7 @@
 						<div class="banner-sliders h-full">
 							<div class="banner-slider swiper h-full">
 								<div class="swiper-wrapper h-full">
-									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; isModalOpen = true;">								
-										<img data-src="../img/banners/1000x300-discovery-sport.jpg" class="h-full w-full object-cover object-center swiper-lazy" />
-										<div class="swiper-lazy-preloader"></div>
-									</a>
+									
 									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; isModalOpen = true;">								
 										<img data-src="../img/banners/1000x300-range-rover.jpg" class="h-full w-full object-cover object-center swiper-lazy" />
 										<div class="swiper-lazy-preloader"></div>
@@ -86,19 +83,19 @@
 				<section class="cars">
 					<div class="flex flex-wrap justify-center gap-x-4 sm:gap-0 sm:justify-around">
 						
-						<a href="../cars/infiniti.html" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
+						<a href="../cars/infiniti/" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
 							<img src="../img/brands/infiniti.jpg" alt="">
 						</a>
-						<a href="../cars/jaguar.html" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
+						<a href="../cars/jaguar/" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
 							<img src="../img/brands/jaguar.jpg" alt="">
 						</a>
-						<a href="../cars/landrover.html" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
+						<a href="../cars/landrover/" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
 							<img src="../img/brands/land-rover.jpg" alt="">
 						</a>
-						<a href="../cars/nissan.html" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
+						<a href="../cars/nissan/" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
 							<img src="../img/brands/nissan.jpg" alt="">
 						</a>
-						<a href="../cars/polaris.html" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
+						<a href="../cars/polaris/" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
 							<img src="../img/brands/polaris.jpg" alt="">
 						</a>
 
@@ -119,7 +116,7 @@
 								x-transition:leave-end="h-0"
 								class="lg:!block">
 								<nav>
-									<a href="../index.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Главная</a>
+									<a href="/" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Главная</a>
 									<a 
 										href="#" 
 										class="relative lg:text-lg p-3 block transition duration-300 hover:bg-gray-200"
@@ -135,75 +132,80 @@
 										><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>						
 									</a>
 									<div x-show="submenu">
-										<a href="../centers/south.html" class="p-3 pl-6 block transition duration-300 hover:bg-gray-200">на Южном шоссе</a>
-										<a href="../centers/infiniti.html" class="p-3 pl-6 block transition duration-300 hover:bg-gray-200">Infiniti на Московском шоссе</a>
-										<a href="../centers/aurora.html" class="p-3 pl-6 block transition duration-300 hover:bg-gray-200">Jaguar Land Rover на Авроре</a>
+										<a href="../centers/south/" class="p-3 pl-6 block transition duration-300 hover:bg-gray-200">на Южном шоссе</a>
+										<a href="../centers/infiniti/" class="p-3 pl-6 block transition duration-300 hover:bg-gray-200">Infiniti на Московском шоссе</a>
+										<a href="../centers/aurora/" class="p-3 pl-6 block transition duration-300 hover:bg-gray-200">Jaguar Land Rover на Авроре</a>
 									</div>
-									<a href="../credit.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Кредит и лизинг</a>
+									<a href="../credit/" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Кредит и лизинг</a>
 									<a href="https://probegcentr.ru/" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200" target="_blank">Автомобили с пробегом</a>
-									<a href="../about.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">О компании</a>
-									<a href="../carrepair.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Кузовной ремонт</a>
-									<a href="../carcare.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Авто Уход</a>
-									<a href="../spo_serv.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Акции сервиса</a>
-									<a href="../specials.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Спецпредложения</a>
+									<a href="../about/" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">О компании</a>
+									<a href="../carrepair/" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Кузовной ремонт</a>
+									<a href="../carcare/" class="lg:text-lg p-3 block transition duration-300 bg-cyan text-white">Авто Уход</a>
+									<a href="../spo_serv/" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Акции сервиса</a>
+									<a href="../specials/" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Спецпредложения</a>
 								</nav>
 							</aside>
 						</div>
 
 						<div class="col-span-6 lg:col-span-4 lg:px-5">
-							<h2>Nissan</h2>
+							<h2>Авто Уход</h2>
 
-							<img src="../img/banners/nissanugfasad.jpg" alt="ALT" class="mb-5 object-cover object-center">
-							<p>
-								<b>Адрес:&nbsp;</b>443085, Самара, Южное шоссе, 12, напротив ТК «Амбар»
-							</p>
-							<p>
-								<b>Телефон:&nbsp;</b><a href="tel:+78469936600">+7 (846) 993-66-00</a>
-							</p>
-							<p>
-								<b>e-mail:</b><span>&nbsp;</span><a href="mailto:sales@nissan.samara-ug.ru"><font color="blue">sales@nissan.samara-ug.ru</font></a>, <a href="mailto:aftersales@nissan.samara-ug.ru"><font color="blue">aftersales@nissan.samara-ug.ru</font></a>
-							</p>
-							<p>
-								<b>Сайт: </b><a href="http://www.nissansamara.ru/" target="_blank"><font color="blue">www.nissansamara.ru</font></a><b> </b>
-							</p>
-							<p>
-								<b>Часы работы:</b><br>
-								Пн-Сб: 9:00 — 20:00  (без перерывов и выходных)<br>
-								Вс: 9:00 — 18:00
-							</p>
-							<p>
-								Добавляйтесь к нам в социальных сетях:<br>
-							</p>
-							<p><a href="https://www.instagram.com/nissan_samara/" target="_blank"><font color="blue">https://www.instagram.com/nissan_samara</font></a></p>
-							<p>
-								<a 
-									href="#" 
-									target="_blank"
-									@click.prevent="$refs.modalTitle.innerText='Записаться на тест-драйв'; isModalOpen = true;"
-								>
-									<font color="blue">Записаться на тест-драйв »</font>
-								</a>
-							</p>
+							<img src="../img/pages/carcare/1.jpg" alt="ALT" class="max-w-full mx-auto mb-6">
 
-							<h3>Схема проезда: </h3>
-							<div class="mb-5">
-								<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0d233693874930687b4f0591be4936bdf51f106c1b0d2dcd575c7f9af3d57c59&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
-							</div>
-
-							<h3>Автомобили Nissan в г. Самара</h3>
-							<p>Автомобильный центр Nissan в г. Самара, входящий в состав группы компаний «Самарские автомобили» - это обширный выбор новых машин в наличии, а также исчерпывающий перечень сопутствующих услуг:</p>
-
+							<h3>Профессиональный уход за Вашим автомобилем:</h3>
 							<ul>
-								<li>Подготовка авто к продаже, в том числе, установка аудиосистем, антикоррозийная обработка, монтаж охранных систем и пр.</li>
-								<li>Полное содействие в оформлении кредита для приобретения понравившегося авто – отличная возможность получить деньги быстро и без ненужных формальностей. &nbsp;</li>
-								<li>Подбор лизинговых программ, в соответствии с возможностями и имеющимися потребностями клиентов. &nbsp;</li>
-								<li>Любые страховые услуг, связанные со страхованием автомобильного транспорта, в том числе, помощь в приобретении полиса КАСКО.</li>
-								<li>Организации тест-драйвов с учетом пожеланий клиентов к комплектации и модели авто. &nbsp;</li>
-								<li>Безупречный сервис, а также любые запасные части на Nissan в Самаре – в наличии и под заказ с минимальным сроком доставки.</li>
-								<li>Ремонтные работы, в том числе, восстановление кузова и локальное удаление дефектов ЛКП.</li>
-								<li>Продажа и установка дополнительных аксессуаров с сохранением гарантии производителя .</li>
+								<li>Высококлассное оборудование</li>
+								<li>Квалифицированный персонал</li>
+								<li>Оригинальные средства по чистке автомобилей</li>
+								<li>Индивидуальный подход к каждому клиенту</li>
+								<li>Комплексная мойка / химчистка по 23 пунктам</li>
+								<li>Бесплатный WI FI</li>
+								<li>Пока автомобиль находится на мойке Вы можете воспользоваться персональным тест-драйвом на автомобилях Jaguar или Land Rover</li>
 							</ul>
-														
+
+							<p><b>Подробнее&nbsp;<a href="tel:+78462073377" class="text-cyan underline transition hover:no-underline whitespace-nowrap">+7 (846) 207 33 77</a></b></p>
+
+							<div class="flex flex-wrap items-stretch mb-5 gap-0 sm:gap-3 xl:gap-4 2xl:gap-5">
+
+								<div class="flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[49%]">
+									<img src="../img/pages/carcare/001.jpg" alt="ALT" class="mb-2 flex-grow">
+									<b>Чистка солнцезащитных козырьков</b>
+								</div>
+								<div class="flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[49%]">
+									<img src="../img/pages/carcare/002.jpg" alt="ALT" class="mb-2 flex-grow">
+									<b>Чистка обивки сидений</b>
+								</div>
+								<div class="flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[49%]">
+									<img src="../img/pages/carcare/003.jpg" alt="ALT" class="mb-2 flex-grow">
+									<b>Чистка ковровых покрытий</b>
+								</div>
+								<div class="flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[49%]">
+									<img src="../img/pages/carcare/004.jpg" alt="ALT" class="mb-2 flex-grow">
+									<b>Чистка воздуховодов</b>
+								</div>
+								<div class="flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[49%]">
+									<img src="../img/pages/carcare/005.jpg" alt="ALT" class="mb-2 flex-grow">
+									<b>Мойка колесных дисков, арок. Доведение до блеска.</b>
+								</div>
+								<div class="flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[49%]">
+									<img src="../img/pages/carcare/006.jpg" alt="ALT" class="mb-2 flex-grow">
+									<b>Детальная чистка панели приборов и консоли</b>
+								</div>
+								<div class="flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[49%]">
+									<img src="../img/pages/carcare/007.jpg" alt="ALT" class="mb-2 flex-grow">
+									<b>Детальная чистка панели приборов и консоли</b>
+								</div>
+								<div class="flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[49%]">
+									<img src="../img/pages/carcare/008.jpg" alt="ALT" class="mb-2 flex-grow">
+									<b>Устранение битумных загрязнений с кузова автомобиля</b>
+								</div>
+								<div class="flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[49%]">
+									<img src="../img/pages/carcare/009.jpg" alt="ALT" class="mb-2 flex-grow">
+									<b>Бережная мойка моторного отсека</b>
+								</div>
+
+							</div>
+							
 							<h3>Преимущества компании «Самарские автомобили»:</h3>
 							<ul>
 								<li>Постоянно пополняемый широкий модельный ряд в наличии на площадках Самары;</li>
@@ -239,7 +241,7 @@
 		<div class="container">
 			<div class="flex flex-col sm:flex-row items-center justify-between text-xs">
 				<span class="copy mb-1 sm:mb-0">© Самарские автомобили, 1993—2021</span>
-				<a href="../agreement.html" class="underline transition ease-in duration-300 hover:no-underline">Соглашение об использовании</a>
+				<a href="../agreement" class="underline transition ease-in duration-300 hover:no-underline">Соглашение об использовании</a>
 			</div>
 		</div>
 	</footer>
@@ -264,7 +266,7 @@
 			<input type="text" name="name" class="w-full mb-5 px-2 py-3 border border-gray-400 focus:border-gray-600 focus:outline-none" placeholder="Ваше имя">
 			<input type="tel" name="phone" class="w-full mb-5 px-2 py-3 border border-gray-400 focus:border-gray-600 focus:outline-none" required placeholder="Ваш телефон *">
 			<button type="submit" class="w-full bg-cyan text-white text-base px-2 py-3 border border-cyan mb-5">Отправить</button>
-			<small class="block text-xs text-center text-gray-800">Нажимая на кнопку действия, я соглашаюсь на <br><a href="../agreement.html" target="_blank" class="text-cyan underline transition hover:no-underline">обработку персональных данных</a></small>
+			<small class="block text-xs text-center text-gray-800">Нажимая на кнопку действия, я соглашаюсь на <br><a href="../agreement" target="_blank" class="text-cyan underline transition hover:no-underline">обработку персональных данных</a></small>
 		</form>      
 		  
 	  	</div><!-- /dialog -->

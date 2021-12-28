@@ -19,7 +19,7 @@
 		<div class="container h-full">
 			<div class="flex items-center justify-between h-full py-3">
 				<div class="logo">
-					<a href="../index.html">
+					<a href="/">
 						<img src="../img/logo.png" class="w-[100px] sm:w-[150px] md:w-[250px]" alt="Самарские Автомобили">
 					</a>
 					<span class="hidden md:block text-center text-xs text-gray-800 mt-2"><b>Infiniti,</b> <b>Jaguar,</b> <b>Land Rover,</b> <b>Nissan,</b> <b>Polaris</b></span>
@@ -57,10 +57,7 @@
 						<div class="banner-sliders h-full">
 							<div class="banner-slider swiper h-full">
 								<div class="swiper-wrapper h-full">
-									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; isModalOpen = true;">								
-										<img data-src="../img/banners/1000x300-discovery-sport.jpg" class="h-full w-full object-cover object-center swiper-lazy" />
-										<div class="swiper-lazy-preloader"></div>
-									</a>
+									
 									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; isModalOpen = true;">								
 										<img data-src="../img/banners/1000x300-range-rover.jpg" class="h-full w-full object-cover object-center swiper-lazy" />
 										<div class="swiper-lazy-preloader"></div>
@@ -86,19 +83,19 @@
 				<section class="cars">
 					<div class="flex flex-wrap justify-center gap-x-4 sm:gap-0 sm:justify-around">
 						
-						<a href="../cars/infiniti.html" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
+						<a href="../cars/infiniti/" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
 							<img src="../img/brands/infiniti.jpg" alt="">
 						</a>
-						<a href="../cars/jaguar.html" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
+						<a href="../cars/jaguar/" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
 							<img src="../img/brands/jaguar.jpg" alt="">
 						</a>
-						<a href="../cars/landrover.html" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
+						<a href="../cars/landrover/" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
 							<img src="../img/brands/land-rover.jpg" alt="">
 						</a>
-						<a href="../cars/nissan.html" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
+						<a href="../cars/nissan/" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
 							<img src="../img/brands/nissan.jpg" alt="">
 						</a>
-						<a href="../cars/polaris.html" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
+						<a href="../cars/polaris/" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
 							<img src="../img/brands/polaris.jpg" alt="">
 						</a>
 
@@ -106,7 +103,7 @@
 				</section>
 
 				<section class="py-5 lg:py-10">
-					<div class="grid grid-cols-6 xl:grid-cols-5" x-data="{submenu: true}">
+					<div class="grid grid-cols-6 xl:grid-cols-5" x-data="{submenu: false}">
 						
 						<div class="col-span-6 lg:col-span-2 xl:col-span-1 mb-6 lg:mb-0 border-2 lg:border-0 lg:border-r lg:border-cyan">
 
@@ -119,7 +116,7 @@
 								x-transition:leave-end="h-0"
 								class="lg:!block">
 								<nav>
-									<a href="../index.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Главная</a>
+									<a href="/" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Главная</a>
 									<a 
 										href="#" 
 										class="relative lg:text-lg p-3 block transition duration-300 hover:bg-gray-200"
@@ -135,87 +132,46 @@
 										><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>						
 									</a>
 									<div x-show="submenu">
-										<a href="../centers/south.html" class="p-3 pl-6 block transition duration-300 hover:bg-gray-200">на Южном шоссе</a>
-										<a href="../centers/infiniti.html" class="p-3 pl-6 block transition duration-300 hover:bg-gray-200">Infiniti на Московском шоссе</a>
-										<a href="../centers/aurora.html" class="p-3 pl-6 block transition duration-300 bg-cyan text-white">Jaguar Land Rover на Авроре</a>
+										<a href="../centers/south/" class="p-3 pl-6 block transition duration-300 hover:bg-gray-200">на Южном шоссе</a>
+										<a href="../centers/infiniti/" class="p-3 pl-6 block transition duration-300 hover:bg-gray-200">Infiniti на Московском шоссе</a>
+										<a href="../centers/aurora/" class="p-3 pl-6 block transition duration-300 hover:bg-gray-200">Jaguar Land Rover на Авроре</a>
 									</div>
-									<a href="../credit.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Кредит и лизинг</a>
+									<a href="../credit/" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Кредит и лизинг</a>
 									<a href="https://probegcentr.ru/" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200" target="_blank">Автомобили с пробегом</a>
-									<a href="../about.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">О компании</a>
-									<a href="../carrepair.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Кузовной ремонт</a>
-									<a href="../carcare.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Авто Уход</a>
-									<a href="../spo_serv.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Акции сервиса</a>
-									<a href="../specials.html" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Спецпредложения</a>
+									<a href="../about/" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">О компании</a>
+									<a href="../carrepair/" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Кузовной ремонт</a>
+									<a href="../carcare/" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Авто Уход</a>
+									<a href="../spo_serv/" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Акции сервиса</a>
+									<a href="../specials/" class="lg:text-lg p-3 block transition duration-300 bg-cyan text-white">Спецпредложения</a>
 								</nav>
 							</aside>
 						</div>
 
 						<div class="col-span-6 lg:col-span-4 lg:px-5">
-							<h2>Jaguar Land Rover на Авроре</h2>
+							<h2>Спецпредложения</h2>
+							<h3>Уважаемые клиенты!</h3>
+							<p>Предлагаем вам ознакомиться со специальными предложениями наших дилерских центров:</p>
 
-							<h3>Автоцентр Jaguar</h3>
-							<div class="flex flex-wrap items-start mb-5">
-								<img src="../img/pages/centers/jaga.jpg" alt="ALT" class="mr-5 mb-5 object-cover object-center">
-								<p>
-									<b>Адрес:</b> 443045, г.Самара, ул. Авроры 150 Е<br>
-									<b>Телефон:&nbsp;</b><a href="tel:+78462073377">+7 (846) 207-33-77</a><br>
-									<b>e-mail: </b><a href="mailto:sales@jlrsamara.ru"><font color="blue">sales@jlrsamara.ru</font></a><br>
-									<b>Сайт: </b><a href="http://www.jaguarsamara.ru/" target="_blank"><font color="blue">www.jaguarsamara.ru</font></a><br>
-									<b>Часы работы:</b> <br>Пн-Сб: 8:30 — 20:00 &nbsp;<br>
-									Вс: 8:30 — 18:00 (без перерывов и выходных) <br>
-									<a 
-										href="#" 
-										target="_blank"
-										@click.prevent="$refs.modalTitle.innerText='Записаться на тест-драйв'; isModalOpen = true;"
-									>
-									<font color="blue">Записаться на тест-драйв »</font>
-									</a>
-								</p>						
+							<div class="flex flex-wrap items-stretch mb-5 gap-0 sm:gap-3 xl:gap-4 2xl:gap-5">
+
+								<a href="https://nissansamara.ru/models/terrano/" class="text-gray-800 flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[48%] xl:w-[23%] underline hover:no-underline" target="_blank">
+									<img src="../img/pages/specials/1.jpg" alt="ALT" class="mb-2 flex-grow">
+									<b class="sm:min-h-[48px]">Nissan Terrano</b>
+								</a>
+								<a href="https://nissansamara.ru/models/murano/" class="text-gray-800 flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[48%] xl:w-[23%] underline hover:no-underline" target="_blank">
+									<img src="../img/pages/specials/2.jpg" alt="ALT" class="mb-2 flex-grow">
+									<b class="sm:min-h-[48px]">Nissan Murano</b>
+								</a>
+								<a href="https://nissansamara.ru/models/x-trail/" class="text-gray-800 flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[48%] xl:w-[23%] underline hover:no-underline" target="_blank">
+									<img src="../img/pages/specials/3.jpg" alt="ALT" class="mb-2 flex-grow">
+									<b class="sm:min-h-[48px]">Nissan X-Trail</b>
+								</a>
+								<a href="https://nissansamara.ru/models/qashqai/" class="text-gray-800 flex flex-col items-center text-center mb-3 sm:mb-0 w-full sm:w-[48%] xl:w-[23%] underline hover:no-underline" target="_blank">
+									<img src="../img/pages/specials/4.jpg" alt="ALT" class="mb-2 flex-grow">
+									<b class="sm:min-h-[48px]">Nissan Qashqai</b>
+								</a>
+
 							</div>
-
-							<h3>Автоцентр Land Rover</h3>
-							<div class="flex flex-wrap items-start mb-5">
-								<img src="../img/pages/centers/lr.jpg" alt="ALT" class="mr-5 mb-5 object-cover object-center">
-								<p>
-									<b>Адрес:</b> 443045, г.Самара, ул. Авроры 150 Е<br>
-									<b>Телефон:&nbsp;</b><a href="tel:+78462073377">+7 (846) 207-33-77</a><br>
-									<b>e-mail: </b><a href="mailto:sales@jlrsamara.ru"><font color="blue">sales@jlrsamara.ru</font></a>&nbsp; <br>
-									<b>Сайт: </b><a href="http://www.landroversamara.ru" target="_blank"><font color="blue">www.landroversamara.ru</font></a><br>
-									<b>Часы работы:</b> <br>Пн-Сб: 8:30 — 20:00 &nbsp;<br>
-									Вс: 8:30 — 18:00 (без перерывов и выходных) <br>
-									<a 
-										href="#" 
-										target="_blank"
-										@click.prevent="$refs.modalTitle.innerText='Записаться на тест-драйв'; isModalOpen = true;"
-									>
-									<font color="blue">Записаться на тест-драйв »</font>
-									</a>
-								</p>						
-							</div>
-
-							<p>В автокомплексе на улице Авроры представлены две автомобильные марки: Jaguar и Land Rover. Все автоцентры работают без выходных дней и предлагают широкий спектр услуг по продаже и обслуживанию автомобилей.</p>
-
-							<h3>Автосалоны:</h3>
-							<ul>
-								<li>продажа автомобилей</li>
-								<li>кредит</li>
-								<li>лизинг</li>
-								<li>страхование</li>
-								<li>тест-драйв</li>
-								<li>автомобили с пробегом (возможен кредит)</li>
-								<li>trade-in (новый автомобиль = ваш автомобиль + доплата)</li>
-							</ul>
-
-							<h3>Сервисные центры:</h3>		
-							<ul>
-								<li>гарантийный и постгарантийный ремонт и техническое обслуживание</li>
-								<li>оригинальные запчасти</li>
-								<li>окраска и кузовной ремонт любой сложности</li>
-								<li>гарантия на все виды ремонта</li>
-								<li>мойка, химчистка, шиномонтаж</li>
-								<li>установка аудио-видео аппаратуры</li>
-								<li>противоугонные системы, тонировка</li>
-							</ul>					
 							
 							<h3>Преимущества компании «Самарские автомобили»:</h3>
 							<ul>
@@ -252,7 +208,7 @@
 		<div class="container">
 			<div class="flex flex-col sm:flex-row items-center justify-between text-xs">
 				<span class="copy mb-1 sm:mb-0">© Самарские автомобили, 1993—2021</span>
-				<a href="../agreement.html" class="underline transition ease-in duration-300 hover:no-underline">Соглашение об использовании</a>
+				<a href="../agreement" class="underline transition ease-in duration-300 hover:no-underline">Соглашение об использовании</a>
 			</div>
 		</div>
 	</footer>
@@ -277,7 +233,7 @@
 			<input type="text" name="name" class="w-full mb-5 px-2 py-3 border border-gray-400 focus:border-gray-600 focus:outline-none" placeholder="Ваше имя">
 			<input type="tel" name="phone" class="w-full mb-5 px-2 py-3 border border-gray-400 focus:border-gray-600 focus:outline-none" required placeholder="Ваш телефон *">
 			<button type="submit" class="w-full bg-cyan text-white text-base px-2 py-3 border border-cyan mb-5">Отправить</button>
-			<small class="block text-xs text-center text-gray-800">Нажимая на кнопку действия, я соглашаюсь на <br><a href="../agreement.html" target="_blank" class="text-cyan underline transition hover:no-underline">обработку персональных данных</a></small>
+			<small class="block text-xs text-center text-gray-800">Нажимая на кнопку действия, я соглашаюсь на <br><a href="../agreement" target="_blank" class="text-cyan underline transition hover:no-underline">обработку персональных данных</a></small>
 		</form>      
 		  
 	  	</div><!-- /dialog -->
