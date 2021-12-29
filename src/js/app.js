@@ -2,6 +2,12 @@ import Alpine from 'alpinejs'
 
 window.Alpine = Alpine
 
+Alpine.store('state', {
+	menuOpen: false, 
+	isModalOpen: false,
+	isResponseModalOpen: false
+})
+
 Alpine.start()
 
 import './modules/slider'
@@ -20,6 +26,11 @@ asidePos()
 window.addEventListener('resize', function(){
 	asidePos()
 })
+
+const titleModal = document.querySelector('#response_modal h3');
+const textModal = document.querySelector('#response_modal .content p');
+const success = ['Спасибо!', 'Ваша заявка успешно отправлена!'];
+const error = ["Ошибка", "Перезагрузите страницу и попробуйте снова"];
 
 function getCookie(name) {
 	var matches = document.cookie.match(new RegExp(
@@ -48,28 +59,38 @@ document.querySelectorAll("form").forEach(function(form) {
 
 		if (response.status === 200) {
 			let res = await response.json();
-			console.log(res);
-			if (!res.validation) {
-				btn.innerHTML = 'Отправить';
-				btn.removeAttribute('disabled');
-				return false;
-			}
+			//console.log(res);
+			// if (!res.validation) {
+			// 	btn.innerHTML = 'Отправить';
+			// 	btn.removeAttribute('disabled');
+			// 	return false;
+			// }
 
 			if (res.answer == 'error') {
 				console.log(["Ошибка", res.error]);
 				btn.innerHTML = 'Отправить';
 				btn.removeAttribute('disabled');
-				return false;
+				Alpine.store('state').isModalOpen = false;
+				titleModal.innerText = error[0];
+				textModal.innerText = error[1];
+				Alpine.store('state').isResponseModalOpen = true;
 			}
 
-			if(res.answer == 'ok') {
-				console.log(["Спасибо", "Отправлено"]);
+			if(res.answer == 'OK') {
 				form.reset();
 				btn.innerHTML = 'Отправить';
 				btn.removeAttribute('disabled');
+				Alpine.store('state').isModalOpen = false;
+				titleModal.innerText = success[0];
+				textModal.innerText = success[1];
+				Alpine.store('state').isResponseModalOpen = true;
 			}
+			return false;
 		}else{
-			console.log(["Ошибка", "Перезагрузите страницу и попробуйте снова"]);
+			Alpine.store('state').isModalOpen = false;
+			titleModal.innerText = error[0];
+			textModal.innerText = error[1];
+			Alpine.store('state').isResponseModalOpen = true;
 		}
 	};
 });

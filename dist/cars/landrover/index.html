@@ -10,9 +10,9 @@
 </head>
 <body 
 	class="flex flex-col min-h-full relative" 
-	x-data="{ menuOpen: false, isModalOpen: false }"
-	@keydown.escape="isModalOpen = false"
-	:class="{'overflow-hidden md:pr-[17px]': isModalOpen}"
+	x-data
+	@keydown.escape="$store.state.isModalOpen = false"
+	:class="{'overflow-hidden md:pr-[17px]': $store.state.isModalOpen || $store.state.isResponseModalOpen}"
 >
 
 	<header class="header sticky top-0 w-full bg-white z-30 shadow-lg" id="header">
@@ -31,12 +31,12 @@
 					<button 
 						type="button" 
 						class="bg-cyan text-white text-xs md:text-base p-1 sm:px-3 sm:py-2 md:py-3 md:px-10 ml-2 md:ml-3 outline-none" 
-						@click="$refs.modalTitle.innerText='Обратная связь'; isModalOpen = true;"
+						@click="$refs.modalTitle.innerText='Обратная связь'; $store.state.isModalOpen = true;"
 					>
 					Обратная связь
 					</button>
 
-					<button class="ml-2 md:ml-3 w-[24px] sm:w-[30px] md:w-[48px] h-[24px] sm:h-[30px] md:h-[48px] rounded-md sm:rounded-lg md:rounded-xl lg:hidden border" @click="menuOpen = !menuOpen">
+					<button class="ml-2 md:ml-3 w-[24px] sm:w-[30px] md:w-[48px] h-[24px] sm:h-[30px] md:h-[48px] rounded-md sm:rounded-lg md:rounded-xl lg:hidden border" @click="$store.state.menuOpen = !$store.state.menuOpen">
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-6 md:w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
 						</svg>
@@ -58,15 +58,15 @@
 							<div class="banner-slider swiper h-full">
 								<div class="swiper-wrapper h-full">
 									
-									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; isModalOpen = true;">								
+									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; $store.state.isModalOpen = true;">								
 										<img data-src="../../img/banners/1000x300-range-rover.jpg" class="h-full w-full object-cover object-center swiper-lazy" />
 										<div class="swiper-lazy-preloader"></div>
 									</a>
-									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; isModalOpen = true;">								
+									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; $store.state.isModalOpen = true;">								
 										<img data-src="../../img/banners/1000x300-defender_.jpg" class="h-full w-full object-cover object-center swiper-lazy" />
 										<div class="swiper-lazy-preloader"></div>
 									</a>
-									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; isModalOpen = true;">								
+									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; $store.state.isModalOpen = true;">								
 										<img data-src="../../img/banners/1000x300-vygoda-do-500-000.jpg" class="h-full w-full object-cover object-center swiper-lazy" />
 										<div class="swiper-lazy-preloader"></div>
 									</a>
@@ -107,7 +107,7 @@
 						
 						<div class="col-span-6 lg:col-span-2 xl:col-span-1 mb-6 lg:mb-0 border-2 lg:border-0 lg:border-r lg:border-cyan">
 
-							<aside x-show="menuOpen" x-cloak
+							<aside x-show="$store.state.menuOpen" x-cloak
 								x-transition:enter="transition-[height] duration-500"
 								x-transition:enter-start="h-0"
 								x-transition:enter-end="h-auto"
@@ -223,16 +223,16 @@
 	<div
 		class="overflow-y-auto"
 		style="background-color: rgba(0,0,0,0.8)"
-		x-show="isModalOpen"
-		:class="{ 'fixed inset-0 z-50 flex items-start justify-center': isModalOpen }"
+		x-show="$store.state.isModalOpen"
+		:class="{ 'fixed inset-0 z-50 flex items-start justify-center': $store.state.isModalOpen }"
 	>
 	<!-- dialog -->
 		<div
 			class="max-w-[450px] w-full bg-white shadow-2xl m-4 my-12 sm:m-8 px-5 p-4 sm:py-8 relative z-50"
-			x-show="isModalOpen"
-			@click.away="isModalOpen = false"
+			x-show="$store.state.isModalOpen"
+			@click.away="$store.state.isModalOpen = false"
 		>
-			<button class="absolute top-1 right-1 text-xl p-1 px-3" @click="isModalOpen = false;">&times;</button>
+			<button class="absolute top-1 right-1 text-xl p-1 px-3" @click="$store.state.isModalOpen = false;">&times;</button>
 			<h3 class="text-center mb-5" x-ref="modalTitle"></h3>
 
 			<form>
@@ -243,6 +243,31 @@
 				<button type="submit" class="w-full bg-cyan text-white text-base px-2 py-3 border border-cyan mb-5">Отправить</button>
 				<small class="block text-xs text-center text-gray-800">Нажимая на кнопку действия, я соглашаюсь на <br><a href="agreement/" target="_blank" class="text-cyan underline transition hover:no-underline">обработку персональных данных</a></small>
 			</form>
+
+		</div><!-- /dialog -->
+	</div><!-- /overlay -->
+
+	<!-- overlay -->
+	<div
+		class="overflow-y-auto"
+		id="response_modal"
+		style="background-color: rgba(0,0,0,0.8)"
+		x-show="$store.state.isResponseModalOpen"
+		:class="{ 'fixed inset-0 z-50 flex items-start justify-center': $store.state.isResponseModalOpen }"
+	>
+	<!-- dialog -->
+		<div
+			class="max-w-[450px] w-full bg-white shadow-2xl m-4 my-12 sm:m-8 px-5 p-4 sm:py-8 relative z-50"
+			x-show="$store.state.isResponseModalOpen"
+			@click.away="$store.state.isResponseModalOpen = false"
+		>
+			<button class="absolute top-1 right-1 text-xl p-1 px-3" @click="$store.state.isResponseModalOpen = false;">&times;</button>
+			<h3 class="text-center mb-5"></h3>
+
+			<div class="content text-center">
+				<p></p>
+			</div>
+
 
 		</div><!-- /dialog -->
 	</div><!-- /overlay -->
