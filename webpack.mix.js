@@ -7,6 +7,7 @@ mix
 	.sass('src/scss/app.scss', 'dist/css/styles.css')
 	.tailwind();
 
+mix.setPublicPath('./')
 
 
 if (mix.inProduction()) {
