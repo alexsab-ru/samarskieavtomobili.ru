@@ -1,0 +1,7 @@
+input[tabindex="-1"]{
+	opacity: 0;
+	position: absolute;
+	z-index: -100;
+	max-width: 200px;
+	height: 0;
+}

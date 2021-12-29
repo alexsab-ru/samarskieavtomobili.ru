@@ -15,8 +15,8 @@ module.exports = {
 		},
 		extend: {
 			transitionProperty: {
-		        'height': 'height',
-		      },
+				'height': 'height',
+			  },
 			colors: {
 				// 'cyan': 'rgb(14, 116, 144)',
 				'cyan': '#616161',

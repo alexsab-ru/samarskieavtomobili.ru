@@ -60,6 +60,6 @@ initSlider(0, loop);
 // 			clickable: true,
 // 	},
 // 	breakpoints: {
-		
+
 // 		}
 // })
