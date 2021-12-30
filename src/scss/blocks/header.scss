@@ -10,3 +10,7 @@ form.has-error::before {
 	content: attr(data-content);
 	color: red;
 }
+
+header button {
+	display: none;
+}

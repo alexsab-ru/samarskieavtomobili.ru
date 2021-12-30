@@ -68,8 +68,8 @@ $$("input[name=phone]").forEach(function (element) {
 
 const titleModal = document.querySelector('#response_modal h3');
 const textModal = document.querySelector('#response_modal .content p');
-const success = ['Спасибо!', 'Ваша заявка успешно отправлена!'];
-const error = ["Ошибка", "Перезагрузите страницу и попробуйте снова"];
+const successArr = ['Спасибо!', 'Ваша заявка успешно отправлена!'];
+const errorArr = ["Ошибка", "Перезагрузите страницу и попробуйте снова"];
 
 function getCookie(name) {
 	var matches = document.cookie.match(new RegExp(
@@ -84,18 +84,16 @@ document.querySelectorAll("form").forEach(function(form) {
 	form.addEventListener('submit', function(e) {
 		e.preventDefault();
 
-		console.log(["Есть ли параметр has-error?", e.target.classList.contains('has-error')]);
 		var formData = new FormData(form);
 		const params = new URLSearchParams([...new FormData(e.target).entries()]);
 
-		console.log(["params", params.toString()]);
-
 		if(e.target.classList.contains('has-error')) {
-			formData.append("fta", true);
 			return false;
 		}
 
-		console.log("Отправляем");
+		if(getCookie('fta')) {
+			formData.append("fta", true);
+		}
 
 		var url = window.location.href;
 		var replUrl = url.replace('?', '&');
@@ -124,17 +122,17 @@ document.querySelectorAll("form").forEach(function(form) {
 			btn.innerHTML = 'Отправить';
 			btn.removeAttribute('disabled');
 			Alpine.store('state').isModalOpen = false;
-			titleModal.innerText = success[0];
-			textModal.innerText = success[1];
+			titleModal.innerText = successArr[0];
+			textModal.innerText = successArr[1];
 			Alpine.store('state').isResponseModalOpen = true;
 		})
 		.catch(error => {
-			console.log(["Ошибка", res.error]);
+			console.error("Ошибка отправки данных формы: " + error);
 			btn.innerHTML = 'Отправить';
 			btn.removeAttribute('disabled');
 			Alpine.store('state').isModalOpen = false;
-			titleModal.innerText = error[0];
-			textModal.innerText = error[1];
+			titleModal.innerText = errorArr[0];
+			textModal.innerText = errorArr[1];
 			Alpine.store('state').isResponseModalOpen = true;
 		});
 		return false;
