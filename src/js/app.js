@@ -3,7 +3,7 @@ import Alpine from 'alpinejs'
 import './modules/slider'
 
 
-// (function(){
+(function(){
 
 window.Alpine = Alpine
 
@@ -80,11 +80,15 @@ function getCookie(name) {
 
 document.querySelectorAll("form").forEach(function(form) {
 	var btn = form.querySelector('button');
-	form.onsubmit = async (e) => {
+
+	form.addEventListener('submit', function(e) {
 		e.preventDefault();
 
 		console.log(["Есть ли параметр has-error?", e.target.classList.contains('has-error')]);
 		var formData = new FormData(form);
+		const params = new URLSearchParams([...new FormData(e.target).entries()]);
+
+		console.log(["params", params.toString()]);
 
 		if(e.target.classList.contains('has-error')) {
 			formData.append("fta", true);
@@ -98,7 +102,7 @@ document.querySelectorAll("form").forEach(function(form) {
 		btn.innerHTML = 'Отправляем...';
 		btn.setAttribute('disabled', true);
 
-		formData.append("page", window.location.href);
+		formData.append("page", window.location.origin + window.location.pathname);
 		window.location.search.slice(1).split("&").forEach(function(pair) {
 			var param = pair.split("=");
 			formData.append(param[0], param[1]);
@@ -110,43 +114,31 @@ document.querySelectorAll("form").forEach(function(form) {
 				formData.append(param[0], param[1]);
 			});
 		}
-
-		let response = await fetch('https://alexsab.ru/lead/samarskieavtomobili/', {
+		fetch('https://alexsab.ru/lead/samarskieavtomobili/', {
 			method: 'POST',
 			body: formData
-		});
-		// let response = {};
-
-		if (response.status === 200) {
-			let res = await response.json();
-
-			if (res.answer == 'error') {
-				console.log(["Ошибка", res.error]);
-				btn.innerHTML = 'Отправить';
-				btn.removeAttribute('disabled');
-				Alpine.store('state').isModalOpen = false;
-				titleModal.innerText = error[0];
-				textModal.innerText = error[1];
-				Alpine.store('state').isResponseModalOpen = true;
-			}
-
-			if(res.answer == 'OK') {
-				form.reset();
-				btn.innerHTML = 'Отправить';
-				btn.removeAttribute('disabled');
-				Alpine.store('state').isModalOpen = false;
-				titleModal.innerText = success[0];
-				textModal.innerText = success[1];
-				Alpine.store('state').isResponseModalOpen = true;
-			}
-			return false;
-		} else {
+		})
+		.then(res => res.json())
+		.then(data => {
+			form.reset();
+			btn.innerHTML = 'Отправить';
+			btn.removeAttribute('disabled');
+			Alpine.store('state').isModalOpen = false;
+			titleModal.innerText = success[0];
+			textModal.innerText = success[1];
+			Alpine.store('state').isResponseModalOpen = true;
+		})
+		.catch(error => {
+			console.log(["Ошибка", res.error]);
+			btn.innerHTML = 'Отправить';
+			btn.removeAttribute('disabled');
 			Alpine.store('state').isModalOpen = false;
 			titleModal.innerText = error[0];
 			textModal.innerText = error[1];
 			Alpine.store('state').isResponseModalOpen = true;
-		}
-	};
+		});
+		return false;
+	});
 });
 
-// })();
+})();
