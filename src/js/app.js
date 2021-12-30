@@ -8,7 +8,7 @@ import './modules/slider'
 window.Alpine = Alpine
 
 Alpine.store('state', {
-	menuOpen: false, 
+	menuOpen: false,
 	isModalOpen: false,
 	isResponseModalOpen: false
 })

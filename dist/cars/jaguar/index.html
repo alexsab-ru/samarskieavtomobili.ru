@@ -8,8 +8,8 @@
 	<link rel="icon" href="../../img/favicon.png">
 	<link rel="stylesheet" href="../../css/styles.css">
 </head>
-<body 
-	class="flex flex-col min-h-full relative" 
+<body
+	class="flex flex-col min-h-full relative"
 	x-data
 	@keydown.escape="$store.state.isModalOpen = false"
 	:class="{'overflow-hidden md:pr-[17px]': $store.state.isModalOpen || $store.state.isResponseModalOpen}"
@@ -28,9 +28,9 @@
 					<a href="https://vk.com/samarskieavtomobili" class="w-[24px] sm:w-[30px] md:w-[48px]" target="_blank">
 						<img src="../../img/vk.svg" alt="VK" class="w-full h-auto">
 					</a>
-					<button 
-						type="button" 
-						class="bg-cyan text-white text-xs md:text-base p-1 sm:px-3 sm:py-2 md:py-3 md:px-10 ml-2 md:ml-3 outline-none" 
+					<button
+						type="button"
+						class="bg-cyan text-white text-xs md:text-base p-1 sm:px-3 sm:py-2 md:py-3 md:px-10 ml-2 md:ml-3 outline-none"
 						@click="$refs.modalTitle.innerText='Обратная связь'; $store.state.isModalOpen = true;"
 					>
 					Обратная связь
@@ -51,22 +51,22 @@
 
 		<div class="site-content">
 			<div class="container">
-				
+
 				<section class="banner relative" id="banner">
-					<div class="banner-wrapper h-full">				
+					<div class="banner-wrapper h-full">
 						<div class="banner-sliders h-full">
 							<div class="banner-slider swiper h-full">
 								<div class="swiper-wrapper h-full">
-									
-									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; $store.state.isModalOpen = true;">								
+
+									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; $store.state.isModalOpen = true;">
 										<img data-src="../../img/banners/1000x300-range-rover.jpg" class="h-full w-full object-cover object-center swiper-lazy" />
 										<div class="swiper-lazy-preloader"></div>
 									</a>
-									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; $store.state.isModalOpen = true;">								
+									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; $store.state.isModalOpen = true;">
 										<img data-src="../../img/banners/1000x300-defender_.jpg" class="h-full w-full object-cover object-center swiper-lazy" />
 										<div class="swiper-lazy-preloader"></div>
 									</a>
-									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; $store.state.isModalOpen = true;">								
+									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; $store.state.isModalOpen = true;">
 										<img data-src="../../img/banners/1000x300-vygoda-do-500-000.jpg" class="h-full w-full object-cover object-center swiper-lazy" />
 										<div class="swiper-lazy-preloader"></div>
 									</a>
@@ -82,7 +82,7 @@
 
 				<section class="cars">
 					<div class="flex flex-wrap justify-center gap-x-4 sm:gap-0 sm:justify-around">
-						
+
 						<a href="../../cars/infiniti/" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
 							<img src="../../img/brands/infiniti.jpg" alt="">
 						</a>
@@ -104,7 +104,7 @@
 
 				<section class="py-5 lg:py-10">
 					<div class="grid grid-cols-6 xl:grid-cols-5" x-data="{submenu: false}">
-						
+
 						<div class="col-span-6 lg:col-span-2 xl:col-span-1 mb-6 lg:mb-0 border-2 lg:border-0 lg:border-r lg:border-cyan">
 
 							<aside x-show="$store.state.menuOpen" x-cloak
@@ -117,19 +117,19 @@
 								class="lg:!block">
 								<nav>
 									<a href="/" class="lg:text-lg p-3 block transition duration-300 hover:bg-gray-200">Главная</a>
-									<a 
-										href="#" 
+									<a
+										href="#"
 										class="relative lg:text-lg p-3 block transition duration-300 hover:bg-gray-200"
 										@click.prevent="submenu = !submenu;"
 										:class="{'bg-gray-200': submenu}"
 									>
 										Автоцентры
-										<svg xmlns="http://www.w3.org/2000/svg" 
-											class="h-5 w-5 absolute right-3 top-4 fill-current opacity-80 transition duration-300" 
-											viewBox="0 0 20 20" 
+										<svg xmlns="http://www.w3.org/2000/svg"
+											class="h-5 w-5 absolute right-3 top-4 fill-current opacity-80 transition duration-300"
+											viewBox="0 0 20 20"
 											fill="currentColor"
 											:class="{'rotate-90': submenu}"
-										><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>						
+										><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
 									</a>
 									<div x-show="submenu">
 										<a href="../../centers/south/" class="p-3 pl-6 block transition duration-300 hover:bg-gray-200">на Южном шоссе</a>
@@ -158,7 +158,7 @@
 								<b>Телефон:&nbsp;</b><a href="tel:+78462073377">+7 (846) 207-33-77</a>
 							</p>
 							<p>
-								<b>e-mail: </b><a href="mailto:sales@jlrsamara.ru"><font color="blue">sales@jlrsamara.ru</font></a>&nbsp; 
+								<b>e-mail: </b><a href="mailto:sales@jlrsamara.ru"><font color="blue">sales@jlrsamara.ru</font></a>&nbsp;
 							</p>
 							<p>
 								<b>Сайт: </b><a href="http://www.jaguarsamara.ru/" target="_blank"><font color="blue">www.jaguarsamara.ru</font></a>
@@ -177,8 +177,8 @@
 							<h3>Автомобили Jaguar в Самаре</h3>
 							<p>Компания Самарские автомобили  — новый официальный дилер Jaguar, расположенный  по адресу: ул. Авроры 150 Е. Это один из самых молодых, современных и престижных дилерских центров марки в России, соответствующий передовым стандартам обслуживания клиентов как автосалона, так и сервисного центра.</p>
 							<p>Отличительной особенностью дилерского центра является предоставление премиального уровня сервиса для всех настоящих и будущих владельцев автомобилей марки Jaguar. </p>
-							<p>Загляните в Самарские автомобили, и всё, от первой приветливой улыбки сотрудника ресепшн до торжественного момента выдачи нового автомобиля, не оставит Вас равнодушным!</p>		
-							
+							<p>Загляните в Самарские автомобили, и всё, от первой приветливой улыбки сотрудника ресепшн до торжественного момента выдачи нового автомобиля, не оставит Вас равнодушным!</p>
+
 							<h3>Преимущества компании «Самарские автомобили»:</h3>
 							<ul>
 								<li>Постоянно пополняемый широкий модельный ряд в наличии на площадках Самары;</li>
@@ -186,21 +186,21 @@
 								<li>Качественный и исчерпывающий сервис;</li>
 								<li>Комфортабельные автосалоны в Самаре;</li>
 								<li>Квалифицированный персонал.</li>
-							</ul>							
+							</ul>
 						</div>
 
 					</div>
 				</section>
 
 			</div>
-<!-- 
+<!--
 			<section class="py-7 lg:py-14 bg-gray-100">
 				<div class="container">
 					<div class="flex flex-col items-center justify-center">
 						<h3 class="mb-4">Узнайте первыми, подпишитесь на новости:</h3>
 						<form class="flex flex-col sm:flex-row items-center max-w-[450px] w-full">
 							<input type="email" name="email" class="w-full sm:w-auto mb-3 sm:mb-0 p-2 border border-gray-400 focus:border-gray-600 focus:outline-none flex-grow" required placeholder="mail@mail.com">
-							<button type="submit" class="w-full sm:w-auto bg-cyan text-white text-base p-2 border border-cyan">Подписаться</button>						
+							<button type="submit" class="w-full sm:w-auto bg-cyan text-white text-base p-2 border border-cyan">Подписаться</button>
 						</form>
 					</div>
 				</div>
@@ -241,7 +241,7 @@
 				<input type="tel" placeholder="8 (999) 999-99-99" name="phone" class="w-full mb-5 px-2 py-3 border border-gray-400 focus:border-gray-600 focus:outline-none" required placeholder="Ваш телефон *">
 
 				<button type="submit" class="w-full bg-cyan text-white text-base px-2 py-3 border border-cyan mb-5">Отправить</button>
-				<small class="block text-xs text-center text-gray-800">Нажимая на кнопку действия, я соглашаюсь на <br><a href="agreement/" target="_blank" class="text-cyan underline transition hover:no-underline">обработку персональных данных</a></small>
+				<small class="block text-xs text-center text-gray-800">Нажимая на кнопку действия, я соглашаюсь на <br><a href="../../agreement/" target="_blank" class="text-cyan underline transition hover:no-underline">обработку персональных данных</a></small>
 			</form>
 
 		</div><!-- /dialog -->
