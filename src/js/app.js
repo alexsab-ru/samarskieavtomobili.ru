@@ -1,5 +1,10 @@
 import Alpine from 'alpinejs'
 
+import './modules/slider'
+
+
+// (function(){
+
 window.Alpine = Alpine
 
 Alpine.store('state', {
@@ -9,8 +14,6 @@ Alpine.store('state', {
 })
 
 Alpine.start()
-
-import './modules/slider'
 
 function asidePos(){
 	let WW = window.innerWidth;
@@ -26,6 +29,42 @@ asidePos()
 window.addEventListener('resize', function(){
 	asidePos()
 })
+
+var $$$ = function (name) { return document.querySelector(name) },
+	$$ = function (name) { return document.querySelectorAll(name) };
+
+function maskphone(e) {
+	// var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+	// e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+
+	var num = this.value.replace(/^(\+7|8)/g, '').replace(/\D/g, '').split(/(?=.)/),
+		i = num.length;
+
+	if (num.length == 1 && num[0] == "") {
+		this.parentElement.classList.add('has-error');
+		this.parentElement.dataset.content = 'Поле обязательно для заполнения';
+		return;
+	} else if(num.length != 10 || [... new Set(num)].length == 1) {
+		this.parentElement.classList.add('has-error');
+		this.parentElement.dataset.content = 'Некорректный номер телефона';
+		return;
+	}
+
+	this.parentElement.classList.remove('has-error');
+
+	if (0 <= i) num.unshift('+7');
+	if (1 <= i) num.splice(1, 0, ' ');
+	if (4 <= i) num.splice(5, 0, ' ');
+	if (7 <= i) num.splice(9, 0, '-');
+	if (9 <= i) num.splice(12, 0, '-');
+	if (11 <= i) num.splice(15, num.length - 15);
+	this.value = num.join('');
+
+};
+
+$$("input[name=phone]").forEach(function (element) {
+	element.addEventListener('change', maskphone);
+});
 
 const titleModal = document.querySelector('#response_modal h3');
 const textModal = document.querySelector('#response_modal .content p');
@@ -43,28 +82,43 @@ document.querySelectorAll("form").forEach(function(form) {
 	var btn = form.querySelector('button');
 	form.onsubmit = async (e) => {
 		e.preventDefault();
+
+		console.log(["Есть ли параметр has-error?", e.target.classList.contains('has-error')]);
+		var formData = new FormData(form);
+
+		if(e.target.classList.contains('has-error')) {
+			formData.append("fta", true);
+			return false;
+		}
+
+		console.log("Отправляем");
+
 		var url = window.location.href;
 		var replUrl = url.replace('?', '&');
-		var source = new URL(getCookie('__gtm_campaign_url') ? getCookie('__gtm_campaign_url') : url);
 		btn.innerHTML = 'Отправляем...';
 		btn.setAttribute('disabled', true);
 
-		var formData = new FormData(form);
-		formData.append("referer", replUrl + (source.search != window.location.search ? source.search.replace('?', '&') : ""));
+		formData.append("page", window.location.href);
+		window.location.search.slice(1).split("&").forEach(function(pair) {
+			var param = pair.split("=");
+			formData.append(param[0], param[1]);
+		});
+		if(getCookie('__gtm_campaign_url')) {
+			var source = new URL(getCookie('__gtm_campaign_url'));
+			source.search.slice(1).split("&").forEach(function(pair) {
+				var param = pair.split("=");
+				formData.append(param[0], param[1]);
+			});
+		}
 
 		let response = await fetch('https://alexsab.ru/lead/samarskieavtomobili/', {
 			method: 'POST',
 			body: formData
 		});
+		// let response = {};
 
 		if (response.status === 200) {
 			let res = await response.json();
-			//console.log(res);
-			// if (!res.validation) {
-			// 	btn.innerHTML = 'Отправить';
-			// 	btn.removeAttribute('disabled');
-			// 	return false;
-			// }
 
 			if (res.answer == 'error') {
 				console.log(["Ошибка", res.error]);
@@ -86,7 +140,7 @@ document.querySelectorAll("form").forEach(function(form) {
 				Alpine.store('state').isResponseModalOpen = true;
 			}
 			return false;
-		}else{
+		} else {
 			Alpine.store('state').isModalOpen = false;
 			titleModal.innerText = error[0];
 			textModal.innerText = error[1];
@@ -94,3 +148,5 @@ document.querySelectorAll("form").forEach(function(form) {
 		}
 	};
 });
+
+// })();
