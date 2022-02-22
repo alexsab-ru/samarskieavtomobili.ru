@@ -1,6 +1,6 @@
-import Swiper, {Lazy, Pagination, Navigation, EffectFade} from 'swiper';
+import Swiper, {Lazy, Pagination, Navigation, Autoplay} from 'swiper';
 
-Swiper.use([Lazy, Pagination, Navigation]);
+Swiper.use([Lazy, Pagination, Navigation, Autoplay]);
 
 let bannerSlider;
 let loop = false;
@@ -8,6 +8,11 @@ let loop = false;
 const initSlider = (num = 0, loop) => {
 	bannerSlider = new Swiper('.banner-slider', {
 		loop: loop,
+		autoplay: {
+			delay: 5000,
+			pauseOnMouseEnter: true,
+			disableOnInteraction: false,
+		},
 		slidesPerView: 1,
 		speed: 500,
 		preloadImages: false,
