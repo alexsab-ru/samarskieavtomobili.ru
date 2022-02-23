@@ -17,6 +17,7 @@ const initSlider = (num = 0, loop) => {
 		speed: 500,
 		preloadImages: false,
 		lazy: true,
+		watchSlidesProgress: true,
 		initialSlide: num,
 		navigation: {
 			nextEl: '.swiper-button-next',
