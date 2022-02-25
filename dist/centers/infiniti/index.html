@@ -55,7 +55,7 @@
 					<button
 						type="button"
 						class="bg-cyan text-white text-xs md:text-base p-1 sm:px-3 sm:py-2 md:py-3 md:px-10 ml-2 md:ml-3 outline-none"
-						@click="$refs.modalTitle.innerText='Обратная связь'; $store.state.isModalOpen = true;"
+						@click="$refs.modalTitle.innerText='Обратная связь'; $refs.brand.value = 'Обратная связь'; $store.state.isModalOpen = true;"
 					>
 					Обратная связь
 					</button>
@@ -82,15 +82,15 @@
 							<div class="banner-slider swiper h-full">
 								<div class="swiper-wrapper h-full">
 
-									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; $store.state.isModalOpen = true;">
+									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; $refs.brand.value = 'landrover'; $store.state.isModalOpen = true;">
 										<img data-src="../../img/banners/1000x300-range-rover.jpg" class="h-full w-full object-cover object-center swiper-lazy" />
 										<div class="swiper-lazy-preloader"></div>
 									</a>
-									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; $store.state.isModalOpen = true;">
+									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; $refs.brand.value = 'landrover'; $store.state.isModalOpen = true;">
 										<img data-src="../../img/banners/1000x300-defender_.jpg" class="h-full w-full object-cover object-center swiper-lazy" />
 										<div class="swiper-lazy-preloader"></div>
 									</a>
-									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; $store.state.isModalOpen = true;">
+									<a href="#" class="banner-slide swiper-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; $refs.brand.value = 'landrover'; $store.state.isModalOpen = true;">
 										<img data-src="../../img/banners/1000x300-vygoda-do-500-000.jpg" class="h-full w-full object-cover object-center swiper-lazy" />
 										<div class="swiper-lazy-preloader"></div>
 									</a>
@@ -186,7 +186,7 @@
 									<a
 										href="#"
 										target="_blank"
-										@click.prevent="$refs.modalTitle.innerText='Записаться на тест-драйв'; $store.state.isModalOpen = true;"
+										@click.prevent="$refs.modalTitle.innerText='Записаться на тест-драйв'; $refs.brand.value = 'infiniti'; $store.state.isModalOpen = true;"
 									>
 									<font color="blue">Записаться на тест-драйв »</font>
 									</a>
@@ -267,6 +267,7 @@
 				<input type="text" tabindex="-1" placeholder="Ваше имя" name="name">
 				<input type="email" tabindex="-1" name="Email" placeholder="mail@example.com">
 				<input type="tel" placeholder="8 (999) 999-99-99" name="phone" class="w-full mb-5 px-2 py-3 border border-gray-400 focus:border-gray-600 focus:outline-none" required placeholder="Ваш телефон *">
+				<input type="text" tabindex="-1" name="brand" x-ref="brand">
 
 				<button type="submit" class="w-full bg-cyan text-white text-base px-2 py-3 border border-cyan mb-5">Отправить</button>
 				<small class="block text-xs text-center text-gray-800">Нажимая на кнопку действия, я соглашаюсь на <br><a href="../../agreement/" target="_blank" class="text-cyan underline transition hover:no-underline">обработку персональных данных</a></small>
