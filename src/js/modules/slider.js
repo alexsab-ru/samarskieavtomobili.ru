@@ -7,6 +7,7 @@ let loop = false;
 
 const initSlider = (num = 0, loop) => {
 	bannerSlider = new Swiper('.banner-slider', {
+		autoHeight: true,
 		loop: loop,
 		autoplay: {
 			delay: 5000,
