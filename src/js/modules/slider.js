@@ -9,11 +9,11 @@ const initSlider = (num = 0, loop) => {
 	bannerSlider = new Swiper('.banner-slider', {
 		autoHeight: true,
 		loop: loop,
-		// autoplay: {
-		// 	delay: 5000,
-		// 	pauseOnMouseEnter: true,
-		// 	disableOnInteraction: false,
-		// },
+		autoplay: {
+			delay: 5000,
+			pauseOnMouseEnter: true,
+			disableOnInteraction: false,
+		},
 		slidesPerView: 1,
 		speed: 500,
 		preloadImages: false,
