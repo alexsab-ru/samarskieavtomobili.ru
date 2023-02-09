@@ -1,5 +1,17 @@
-.DS_Store
-node_modules
+sftp-config.json
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+.bundle
+vendor
+/node_modules/
+/.git/
+/**/Thumbs.db
+/**/*.DS_Store
+/Gemfile.lock
+.env
+desktop.ini
 
 
 # local env files

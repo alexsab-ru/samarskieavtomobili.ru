@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'ru' }}" class="h-full">
+{% include head.html %}
+<body
+	class="flex flex-col min-h-full relative"
+	x-data
+	@keydown.escape="$store.state.isModalOpen = false"
+	:class="{'overflow-hidden md:pr-[17px]': $store.state.isModalOpen || $store.state.isResponseModalOpen}"
+>
+<noscript><div><img src="https://mc.yandex.ru/watch/86970610" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+{% include header.html %}
+
+	<main class="flex-grow">
+		<div class="site-content">
+			<div class="container">
+{% include sections/banner.html %}
+{% include sections/cars.html %}
+			<section class="py-5 lg:py-10">
+				<div 
+					class="grid grid-cols-6 xl:grid-cols-5" 
+					x-data="{% if page.url contains '/centers/' %}{submenu: true}{% else %}{submenu: false}{% endif %}">
+{% include aside.html %}
+					<div class="col-span-6 lg:col-span-4 lg:px-5">
+{{ content }}
+{% include sections/adv.html %}
+{% if page.url == '/' %}
+<p><b>«{{ site.name }}»</b> - это очевидный ответ на вопрос, если вы еще не решили где купить авто в Самаре.</p>
+{% endif %}
+					</div>
+				</div>
+			</section>
+			</div>
+		</div>
+	</main>
+
+	{% include footer.html %}
+
+	<!-- MODALS -->
+	{% include modals/callback.html %}
+	{% include modals/message.html %}
+
+	<script src="{{ './assets/js/scripts.js' | relative_url }}"></script>
+
+</body>
+</html>

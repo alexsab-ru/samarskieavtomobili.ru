@@ -1,0 +1,42 @@
+					<div class="col-span-6 lg:col-span-2 xl:col-span-1 mb-6 lg:mb-0 border-2 lg:border-0 lg:border-r lg:border-cyan">
+
+						<aside x-show="$store.state.menuOpen" x-cloak
+							x-transition:enter="transition-[height] duration-500"
+							x-transition:enter-start="h-0"
+							x-transition:enter-end="h-auto"
+							x-transition:leave="transition-[height]"
+							x-transition:leave-start="h-auto"
+							x-transition:leave-end="h-0"
+							class="lg:!block">
+							<nav>
+								{% for link in site.aside_menu %}
+								<a 
+									href="{{ link.url }}" 
+									class="relative lg:text-lg p-3 block transition duration-300 {% if link.url == page.url %}bg-cyan text-white{% else %}hover:bg-gray-200{% endif %}" 
+									{% if link.target %}target="_blank"{% endif %}
+									{% if link.submenu %}
+									@click.prevent="submenu = !submenu;"
+									:class="{'bg-gray-200': submenu}"
+									{% endif %}
+								>
+									{{ link.title }}
+									{% if link.submenu %}
+									<svg xmlns="http://www.w3.org/2000/svg"
+										class="h-5 w-5 absolute right-3 top-4 fill-current opacity-80 transition duration-300"
+										viewBox="0 0 20 20"
+										fill="currentColor"
+										:class="{'rotate-90': submenu}"
+									><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+									{% endif %}
+								</a>
+								{% if link.submenu %}
+								<div x-show="submenu">
+									{% for sublink in link.submenu %}
+									<a href="{{ sublink.url }}" class="p-3 pl-6 block transition duration-300 {% if sublink.url == page.url %}bg-cyan text-white{% else %}hover:bg-gray-200{% endif %}">{{ sublink.title }}</a>
+									{% endfor %}
+								</div>
+								{% endif %}
+								{% endfor %}
+							</nav>
+						</aside>
+					</div>

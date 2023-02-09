@@ -34,23 +34,9 @@ var $$$ = function (name) { return document.querySelector(name) },
 	$$ = function (name) { return document.querySelectorAll(name) };
 
 function maskphone(e) {
-	// var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
-	// e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
 
 	var num = this.value.replace(/^(\+7|8)/g, '').replace(/\D/g, '').split(/(?=.)/),
 		i = num.length;
-
-	if (num.length == 1 && num[0] == "") {
-		this.parentElement.classList.add('has-error');
-		this.parentElement.dataset.content = 'Поле обязательно для заполнения';
-		return;
-	} else if(num.length != 10 || [... new Set(num)].length == 1) {
-		this.parentElement.classList.add('has-error');
-		this.parentElement.dataset.content = 'Некорректный номер телефона';
-		return;
-	}
-
-	this.parentElement.classList.remove('has-error');
 
 	if (0 <= i) num.unshift('+7');
 	if (1 <= i) num.splice(1, 0, ' ');
@@ -60,10 +46,19 @@ function maskphone(e) {
 	if (11 <= i) num.splice(15, num.length - 15);
 	this.value = num.join('');
 
+	this.onblur = function(){
+		if(num.length != 15 || [... new Set(num)].length == 1) {
+			this.parentElement.classList.add('has-error');
+			this.parentElement.dataset.content = 'Некорректный номер телефона';
+			return;
+		}
+	}
+	this.parentElement.classList.remove('has-error');
 };
 
 $$("input[name=phone]").forEach(function (element) {
-	element.addEventListener('change', maskphone);
+	element.addEventListener('focus', maskphone);
+	element.addEventListener('input', maskphone);
 });
 
 const titleModal = document.querySelector('#response_modal h3');

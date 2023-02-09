@@ -3,8 +3,8 @@ let mix = require('laravel-mix');
 require('mix-tailwindcss');
 
 mix
-	.js('src/js/app.js', 'dist/js/scripts.js')
-	.sass('src/scss/app.scss', 'dist/css/styles.css')
+	.js('src/js/app.js', 'assets/js/scripts.js')
+	.sass('src/scss/app.scss', 'assets/css/styles.css')
 	.tailwind();
 
 mix.setPublicPath('./')
@@ -16,9 +16,9 @@ if (mix.inProduction()) {
 	mix.sourceMaps().webpackConfig({ devtool: 'inline-source-map' });
 	mix.browserSync({
 		server: {
-			baseDir: "dist",
+			baseDir: "_site",
 		},
-		files: ['dist/**/*.html', 'dist/css/styles.css', 'dist/js/scripts.js'],
+		files: ['_site/**/*.html', 'assets/css/styles.css', 'assets/js/scripts.js'],
 		notify: false
 	});
 }

@@ -2,6 +2,10 @@
 	// padding-bottom: 30%;
 	height: auto;
 	position: relative;
+	// aspect-ratio: 1/0.75;
+	// @media (min-width: 768px){
+	// 	aspect-ratio: auto;
+	// }
 	&:before{
 		content: '';
 		position: absolute;

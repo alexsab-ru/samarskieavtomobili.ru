@@ -1,0 +1,9 @@
+			<section class="cars">
+				<div class="flex flex-wrap justify-center gap-x-4 sm:gap-0 sm:justify-around">
+					{% for car_link in site.cars_menu %}
+					<a href="{{ car_link.url }}" class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
+						<img src="{{ car_link.logo | relative_url }}" alt="Логотип {{ car_link.title }}">
+					</a>
+					{% endfor %}
+				</div>
+			</section>
