@@ -3,7 +3,7 @@ encoding: bom|utf-8
 title: Продажа авто в Самаре, автоцентры и автосалоны Самары по продаже новых
 name: Самарские автомобили
 description: Группа компаний «Самарские автомобили» предлагает новые авто в Самаре! Продажа новых автомобилей осуществляется на правах официального дилера в автосалонах Самары.
-baseurl: "/samarskieavtomobili"
+baseurl: ""
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 plugins:
