@@ -40,6 +40,9 @@ aside_menu:
     url: "/specials/"
 
 cars_menu:
+  - title: "Москвич"
+    url: "/cars/moskvich/"
+    logo: "img/brands/moskvich.jpg"
   - title: "Infiniti"
     url: "/cars/infiniti/"
     logo: "img/brands/infiniti.jpg"
