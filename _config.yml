@@ -19,9 +19,7 @@ aside_menu:
     submenu:
       - title: "на Южном шоссе"
         url: "/centers/south/"
-      - title: "Infiniti на Южном шоссе"
-        url: "/centers/infiniti/"
-      - title: "Jaguar Land Rover на Авроре"
+      - title: "на Авроре"
         url: "/centers/aurora/"
   - title: "Кредит и лизинг"
     url: "/credit/"
@@ -40,6 +38,9 @@ aside_menu:
     url: "/specials/"
 
 cars_menu:
+  - title: "Москвич"
+    url: "/cars/moskvich/"
+    logo: "img/brands/moskvich.jpg"
   - title: "Infiniti"
     url: "/cars/infiniti/"
     logo: "img/brands/infiniti.jpg"
