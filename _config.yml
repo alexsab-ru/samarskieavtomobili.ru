@@ -19,9 +19,7 @@ aside_menu:
     submenu:
       - title: "на Южном шоссе"
         url: "/centers/south/"
-      - title: "Infiniti на Южном шоссе"
-        url: "/centers/infiniti/"
-      - title: "Jaguar Land Rover на Авроре"
+      - title: "на Авроре"
         url: "/centers/aurora/"
   - title: "Кредит и лизинг"
     url: "/credit/"
