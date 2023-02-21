@@ -30,9 +30,6 @@ window.addEventListener('resize', function(){
 	asidePos()
 })
 
-var $$$ = function (name) { return document.querySelector(name) },
-	$$ = function (name) { return document.querySelectorAll(name) };
-
 function maskphone(e) {
 
 	var num = this.value.replace(/^(\+7|8)/g, '').replace(/\D/g, '').split(/(?=.)/),
@@ -56,7 +53,7 @@ function maskphone(e) {
 	this.parentElement.classList.remove('has-error');
 };
 
-$$("input[name=phone]").forEach(function (element) {
+document.querySelectorAll("input[name=phone]").forEach(function (element) {
 	element.addEventListener('focus', maskphone);
 	element.addEventListener('input', maskphone);
 });
