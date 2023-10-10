@@ -29,8 +29,8 @@ aside_menu:
     target: true
   - title: "О компании"
     url: "/about/"
-  - title: "Кузовной ремонт"
-    url: "/carrepair/"
+  # - title: "Кузовной ремонт"
+  #   url: "/carrepair/"
   - title: "Авто Уход"
     url: "/carcare/"
   - title: "Акции сервиса"
