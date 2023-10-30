@@ -1,52 +1,77 @@
-import Swiper, { Lazy, Pagination, Navigation, Autoplay } from 'swiper';
+import Swiper from "swiper";
+import { Navigation, Pagination, Autoplay, Parallax, Controller } from "swiper/modules";
 
-Swiper.use([Lazy, Pagination, Navigation, Autoplay]);
-
+const progressCircle = document.querySelector(".autoplay-progress svg");
+const progressContent = document.querySelector(".autoplay-progress span");
 let bannerSlider;
 let loop = false;
+let autoplay = {
+	enabled: false,
+	disableOnInteraction: false,
+};
+let videoPrev = null;
+let videoActive = null;
+
+if (progressCircle) {
+	progressCircle.closest(".autoplay-progress").style.display = "none";
+}
 
 const initSlider = (num = 0, loop) => {
 	bannerSlider = new Swiper('.banner-slider', {
-		autoHeight: true,
-		loop: loop,
-		autoplay: {
-			delay: 5000,
-			pauseOnMouseEnter: true,
-			disableOnInteraction: false,
+		modules: [Navigation, Pagination, Autoplay, Parallax],
+		loop,
+		speed: 2400,
+		parallax: {
+			enabled: true,
 		},
-		slidesPerView: 1,
-		speed: 500,
-		preloadImages: false,
-		lazy: true,
-		watchSlidesProgress: true,
-		initialSlide: num,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
+		autoplay,
 		pagination: {
-			el: '.swiper-pagination',
-			type: 'bullets', //'bullets' | 'fraction' | 'progressbar' | 'custom'
+			el: ".swiper-pagination",
 			clickable: true,
 		},
-		breakpoints: {
-			320: {
-				pagination: false
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+		on: {
+			autoplayTimeLeft(s, time, progress) {
+				progressCircle.style.setProperty("--progress", 1 - progress);
+				progressContent.textContent = `${Math.ceil(time / 1000)}с.`;
 			},
-			580: {
-				pagination: {
-					el: '.swiper-pagination',
-					type: 'bullets', //'bullets' | 'fraction' | 'progressbar' | 'custom'
-					clickable: true,
-				},
+			slideChange(s) {
+				const prevIdx = this.activeIndex - 1 < 0 ? 0 : this.activeIndex - 1;
+				videoPrev = this.slides[prevIdx].querySelector("video");
+				if (videoPrev) {
+					videoPrev.pause();
+				}
+				videoActive = this.slides[this.activeIndex].querySelector("video");
+				if (videoActive) {
+					this.params.autoplay.delay = Math.ceil(videoActive.duration) * 1000;
+				}
+				progressCircle.closest(".autoplay-progress").style.display = "none";
 			},
-		}
+			slideChangeTransitionEnd(s) {
+				if (videoPrev) {
+					videoPrev.currentTime = 0;
+				}
+				if (videoActive) {
+					videoActive.play();
+				}
+				progressCircle.closest(".autoplay-progress").style.display = "flex";
+			},
+		},
 	})
 }
 
 const slides = document.querySelectorAll('.banner-slide');
 
-if (slides.length > 1) loop = true;
+if (slides.length > 1) {
+	loop = true;
+	autoplay.enabled = true;
+	if (progressCircle) {
+		progressCircle.closest(".autoplay-progress").style.display = "flex";
+	}
+}
 
 initSlider(0, loop);
 
