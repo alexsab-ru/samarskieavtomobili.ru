@@ -1,0 +1,41 @@
+	<header class="header sticky top-0 w-full bg-white z-30 shadow-lg" id="header">
+		<div class="container h-full">
+			<div class="flex items-center justify-between h-full py-3">
+
+				{% if page.url != '/' %}
+				<a href="/" class="logo">
+				{% else %}
+				<div class="logo">
+				{% endif %}
+					<span>
+						<img src="{{ 'img/logo.png' | relative_url }}" class="w-[100px] sm:w-[150px] md:w-[250px]" alt="Самарские Автомобили">
+					</span>
+					<span class="hidden md:block text-center text-xs text-gray-800 mt-2"><b>Москвич</b>, <b>Nissan</b>, <b>INFINITI</b>, <b>Jaguar</b>, <b>Land Rover</b> </span>
+					{% if page.url != '/' %}
+					</a>
+					{% else %}
+					</div>
+					{% endif %}
+
+				<div class="flex items-center">
+					<a href="https://vk.com/63cars" class="w-[24px] sm:w-[30px] md:w-[48px]" target="_blank">
+						<img src="{{ 'img/vk.svg' | relative_url }}" alt="VK" class="w-full h-auto">
+					</a>
+					<button
+						type="button"
+						class="bg-cyan text-white text-xs md:text-base p-1 sm:px-3 sm:py-2 md:py-3 md:px-10 ml-2 md:ml-3 outline-none"
+						@click="$refs.modalTitle.innerText='Обратная связь'; $refs.brand.value = 'Обратная связь'; $store.state.isModalOpen = true;"
+					>
+					Обратная связь
+					</button>
+
+					<button class="ml-2 md:ml-3 w-[24px] sm:w-[30px] md:w-[48px] h-[24px] sm:h-[30px] md:h-[48px] rounded-md sm:rounded-lg md:rounded-xl lg:hidden border" @click="$store.state.menuOpen = !$store.state.menuOpen">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-6 md:w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+						</svg>
+					</button>
+				</div>
+
+			</div>
+		</div>
+	</header>

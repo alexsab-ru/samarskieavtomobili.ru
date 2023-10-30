@@ -4,23 +4,45 @@
   "description": "Самарские автомобили",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cd public && bundle install",
+    "vite_dev": "cd vite && APP_ENV=development vite dev --open --host --port 5133",
+    "vite_build": "cd vite && APP_ENV=production vite build",
+    "jekyll": "cd public && JEKYLL_ENV=development bundle exec jekyll serve --host $(ipconfig getifaddr en0) --port 5134 -l -o",
+    "jekyll_build": "cd public && JEKYLL_ENV=production bundle exec jekyll build",
+    "preview": "cd public && JEKYLL_ENV=production bundle exec jekyll serve --host $(ipconfig getifaddr en0) --port 5134 -l -o",
+    "dev": "concurrently \"cd vite && APP_ENV=development vite dev --host --port 5133\" \"cd public && JEKYLL_ENV=development bundle exec jekyll serve --host $(ipconfig getifaddr en0) --port 5134 -l -o\"",
+    "deploy": "cd vite && APP_ENV=production vite build && cd ../public && [ -d _data ] || mkdir _data && mv dist/manifest.json _data/manifest.json && rm -rf assets && mv dist/assets assets",
+    "build": "cd vite && APP_ENV=production vite build && cd ../public && [ -d _data ] || mkdir _data && mv dist/manifest.json _data/manifest.json && rm -rf assets && mv dist/assets assets && JEKYLL_ENV=production bundle exec jekyll build",
+    "\n# WINDOWS SCRIPTS:": "",
+    "vite_dev_win": "cd vite && cross-env APP_ENV=development vite dev --host --port 5133",
+    "vite_build_win": "cd vite && cross-env APP_ENV=production vite build",
+    "jekyll_win": "for /f \"tokens=2 delims=:\" %i in ('ipconfig ^| findstr \"IPv4 Address\"') do @set IP=%i && cd public && cross-env JEKYLL_ENV=development bundle exec jekyll serve --host %IP% --port 5134 -l -o",
+    "jekyll_build_win": "cd public && cross-env JEKYLL_ENV=production bundle exec jekyll build -l -o",
+    "preview_win": "for /f \"tokens=2 delims=:\" %i in ('ipconfig ^| findstr \"IPv4 Address\"') do @set IP=%i && cd public && cross-env JEKYLL_ENV=production bundle exec jekyll serve --host %IP% --port 5134 -l -o",
+    "dev_win": "for /f \"tokens=2 delims=:\" %i in ('ipconfig ^| findstr \"IPv4 Address\"') do @set IP=%i && concurrently \"cd vite && cross-env APP_ENV=development vite dev --host %IP% --port 5133\" \"cd public && cross-env JEKYLL_ENV=development bundle exec jekyll serve --host %IP% --port 5134 -l -o --incremental --trace\"",
+    "deploy_win": "cd vite && cross-env APP_ENV=production vite build && cd ../public && [ -d _data ] || mkdir _data && mv dist/manifest.json _data/manifest.json && rm -rf assets && mv dist/assets assets",
+    "build_win": "cd vite && cross-env APP_ENV=production vite build && cd ../public && [ -d _data ] || mkdir _data && mv dist/manifest.json _data/manifest.json &&  rm -rf assets && mv dist/assets assets && cross-env JEKYLL_ENV=production bundle exec jekyll build",
+    "\n# https://alexsab.t.me": ""
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.27.5",
-    "browser-sync-webpack-plugin": "^2.3.0",
-    "laravel-mix": "^6.0.34",
-    "laravel-mix-tailwind": "^0.1.2",
-    "mix-tailwindcss": "^1.3.0",
-    "resolve-url-loader": "^4.0.0",
-    "sass": "^1.43.3",
-    "sass-loader": "^12.2.0",
-    "swiper": "^7.2.0",
-    "tailwindcss": "^2.2.17"
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/compiler-sfc": "^3.2.45",
+    "autoprefixer": "^10.4.14",
+    "concurrently": "^8.2.0",
+    "cross-env": "^7.0.3",
+    "postcss": "^8.4.25",
+    "sass": "^1.63.6",
+    "swiper": "^10.1.0",
+    "tailwindcss": "^3.3.2",
+    "vite": "^4.0.4",
+    "vite-plugin-live-reload": "^3.0.1"
   },
   "dependencies": {
-    "alpinejs": "^3.7.1"
+    "@mdi/font": "^7.2.96",
+    "alpinejs": "^3.13.0",
+    "glightbox": "^3.2.0"
   }
 }

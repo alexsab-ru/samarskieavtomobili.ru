@@ -1,0 +1,21 @@
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+	<meta property="title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+	<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+	<meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}" />
+	<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+	<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+	<meta property="og:type" content="website" />
+	<link rel="icon" href="{{ './img/favicon.png' | relative_url }}">
+
+{% if jekyll.environment == "development" %}
+	<link rel="stylesheet" href="http://{{ site.host }}:{{ site.port | minus: 1 }}/src/scss/app.scss">
+{% else %}
+	{% if site.data.manifest and site.data.manifest['src/scss/app.scss'] and site.data.manifest['src/scss/app.scss'].file %}
+	<link rel="stylesheet" href="{{ site.data.manifest['src/scss/app.scss'].file | relative_url }}">
+	{% endif %}
+	{%- include head-scripts.html -%}
+{% endif %}
+</head>
