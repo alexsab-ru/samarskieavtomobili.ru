@@ -21,7 +21,7 @@ const initSlider = (num = 0, loop) => {
 		modules: [Navigation, Pagination, Autoplay, Parallax],
 		loop,
 		autoHeight: true,
-		speed: 2400,
+		speed: 1000,
 		parallax: {
 			enabled: true,
 		},
