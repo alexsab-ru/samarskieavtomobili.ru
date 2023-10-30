@@ -1,8 +1,8 @@
-<section class="banner relative" id="banner">
-	<div class="banner-wrapper">
-		<div class="banner-sliders">
-			<div class="banner-slider swiper">
-				<div class="swiper-wrapper">
+<section class="banner relative">
+    <div class="relative pb-[56.25%] max-[400px]:pb-[70%]">
+        <div class="absolute inset-0">
+            <div class="swiper banner-slider h-full text-white">
+                <div class="swiper-wrapper">
 
 					<a href="https://moskvich-samauto.ru/news/moskvich-3-ot-330-v-den/" class="banner-slide swiper-slide" target="_blank">
 						<img data-src="/img/banners/moskvich-3-ot-330-v-den.webp" class="h-full w-full object-cover object-center hidden md:block swiper-lazy" />
@@ -48,9 +48,17 @@
 				</div>
 			</div>
 
-			<div class="swiper-pagination"></div>
-			<div class="swiper-button-prev z-20"></div>
-			<div class="swiper-button-next z-20"></div>
+			<div class="swiper-pagination banner-pagination"></div>
+
+			<div class="autoplay-progress">
+				<svg viewBox="0 0 48 48">
+					<circle cx="24" cy="24" r="20"></circle>
+				</svg>
+				<span></span>
+			</div>
+
+			<div class="swiper-button-prev banner-button-prev !hidden md:!flex"></div>
+			<div class="swiper-button-next banner-button-next !hidden md:!flex"></div>
 		</div>
 	</div>
 </section>
