@@ -17,13 +17,14 @@ plugins:
 aside_menu:
   - title: "Главная"
     url: "/"
-  - title: "Автоцентры"
-    url: "#"
-    submenu:
-      - title: "на Южном шоссе"
-        url: "/centers/south/"
-      - title: "на Авроре"
-        url: "/centers/aurora/"
+  - title: "Автоцентр на Южном шоссе"
+    url: "/centers/south/"
+    # url: "#"
+    # submenu:
+    #   - title: "на Южном шоссе"
+    #     url: "/centers/south/"
+    #   - title: "на Авроре"
+    #     url: "/centers/aurora/"
   - title: "Кредит и лизинг"
     url: "/credit/"
   - title: "Автомобили с пробегом"
