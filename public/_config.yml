@@ -5,11 +5,13 @@ name: Самарские автомобили
 description: Группа компаний «Самарские автомобили» предлагает новые авто в Самаре! Продажа новых автомобилей осуществляется на правах официального дилера в автосалонах Самары.
 keywords: ""
 baseurl: ""
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://samarskieavtomobili.ru" # the base hostname & protocol for your site, e.g. http://example.com
+
+destination: ../_site/
 
 plugins:
-  - jekyll-feed
   - jekyll-sitemap
+  - jekyll-feed
   - jekyll-seo-tag
 
 aside_menu:
