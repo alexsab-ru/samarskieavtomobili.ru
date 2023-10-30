@@ -1,29 +1,38 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-const colors = require('tailwindcss/colors');
+import defaultTheme from 'tailwindcss/defaultTheme'
+import colors from 'tailwindcss/colors'
 
-module.exports = {
-	mode: 'jit',
-
-	purge: ['./_site/**/*.html', './src/**/*.js'],
-
-	darkMode: false, // or 'media' or 'class'
-
-	theme: {
-		container: {
-			center: true,
-			padding: '1rem',
+export const content = [
+	"../public/**/*.html",
+	'./src/js/**/*.js'
+]
+export const theme = {
+	container: {
+		center: true,
+		padding: '1rem',
+	},
+	colors: {
+		blue: '#1b3252',
+		red: colors.red,
+		green: colors.green,
+		accent: '#22B6E5',
+		transparent: 'transparent',
+		white: colors.white,
+		black: colors.black,
+		gray: colors.gray,
+		deep: '#26282A',
+		cyan: '#616161'
+	},
+	extend: {
+		fontFamily: {
+			sans: ['hyunday-st', ...defaultTheme.fontFamily.sans],
 		},
-		extend: {
-			transitionProperty: {
-				'height': 'height',
-			  },
-			colors: {
-				// 'cyan': 'rgb(14, 116, 144)',
-				'cyan': '#616161',
-			},
-			fontFamily: {
-				sans: ['hyunday-st', ...defaultTheme.fontFamily.sans],
-			},
+		transitionProperty: {
+			'height': 'height',
+		},
+		transitionTimingFunction: {
+			"in-expo": "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+			"out-expo": "cubic-bezier(0.19, 1, 0.22, 1)",
 		},
 	},
 }
+export const plugins = []
