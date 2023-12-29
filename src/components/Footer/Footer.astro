@@ -1,0 +1,12 @@
+---
+import {SITE_NAME} from '@/const.js';
+const year = new Date().getFullYear();
+---
+<footer class="footer bg-gray-800 text-white text-opacity-80 py-10" id="footer">
+	<div class="container">
+		<div class="flex flex-col sm:flex-row items-center justify-between text-xs">
+			<span class="copy mb-1 sm:mb-0">© {SITE_NAME}, 1993—{year}</span>
+			<a href="/agreement/" class="underline transition ease-in duration-300 hover:no-underline">Соглашение об использовании</a>
+		</div>
+	</div>
+</footer>
