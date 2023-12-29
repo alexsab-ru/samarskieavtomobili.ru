@@ -1,7 +1,5 @@
 import Alpine from 'alpinejs'
 
-import './modules/slider'
-
 
 (function(){
 

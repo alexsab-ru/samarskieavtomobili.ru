@@ -1,0 +1,28 @@
+---
+import { ASIDE_MENU } from '@/const'
+const pathname = Astro.url.pathname;
+---
+
+<div class="col-span-6 lg:col-span-2 xl:col-span-1 mb-6 lg:mb-0 border-2 lg:border-0 lg:border-r lg:border-cyan">
+	<aside x-show="$store.state.menuOpen" x-cloak
+		x-transition:enter="transition-[height] duration-500"
+		x-transition:enter-start="h-0"
+		x-transition:enter-end="h-auto"
+		x-transition:leave="transition-[height]"
+		x-transition:leave-start="h-auto"
+		x-transition:leave-end="h-0"
+		class="lg:!block">
+		<nav>
+			{
+				ASIDE_MENU.map(link => (
+				<a 
+					href={link.url || '#'} 
+					class={`relative lg:text-lg p-3 block transition duration-300 ${pathname === link.url ? ' bg-cyan text-white' : ' hover:bg-gray-200'}` }
+				>
+					{link.title}
+				</a>
+				))
+			}
+		</nav>
+	</aside>
+</div>

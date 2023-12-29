@@ -6,12 +6,15 @@ export const SITE_DESCR = 'Группа компаний «Самарские а
 
 export const BRAND = 'Baic';
 
-export const LINKS_MENU = [
-	{url: 'cars/', name: 'Авто в наличии'},
-	{url: 'special-offers/', name: 'Спецпредложения'},
-	{url: 'news/', name: 'Новости'},
-	{url: '#services', name: 'Услуги'},
-	{url: '#contacts', name: 'Контакты'},
+export const ASIDE_MENU = [
+  {title: "Главная", url: "/"},
+  {title: "Автоцентр на Южном шоссе", url: "/centers/south"},
+  {title: "Кредит и лизинг", url: "/credit"},
+  {title: "Автомобили с пробегом", url: "https://probegcentr.ru", target: true},
+  {title: "О компании", url: "/about"},
+  {title: "Авто Уход", url: "/carcare"},
+  {title: "Акции сервиса", url: "/spo_serv"},
+  {title: "Спецпредложения", url: "/specials"},
 ];
 
 export const AGREE_LABEL = '<span>Я согласен на</span><a href="/privacy-policy" class="underline transition-all hover:no-underline" target="_blank">обработку персональных данных</a>';
