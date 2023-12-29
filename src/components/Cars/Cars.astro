@@ -1,0 +1,18 @@
+---
+import { CARS_MENU } from '@/const';
+---
+{
+	CARS_MENU && (
+	<section class="cars">
+		<div class="flex flex-wrap justify-center gap-x-4 sm:gap-0 sm:justify-around">
+			{
+				CARS_MENU.map(link => (
+				<a href={link.url} class="w-[26%] sm:w-[12%] transition duration-500 hover:scale-110">
+					<img src={link.logo} alt={`Логотип ${link.title}`}>
+				</a>
+				))
+			}
+		</div>
+	</section>
+	)
+}

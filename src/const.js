@@ -1,7 +1,8 @@
-export const SITE_NAME = 'Продажа авто в Самаре, автоцентры и автосалоны Самары по продаже новых'; // Название сайта по умолчанию
-export const LEGAL_ENTITY = 'ООО «Юридическое название»'; // Юр лицо
-export const LEGAL_INN = '1234567890'; // ИНН
-export const LEGAL_CITY = 'г. Город'; // Город
+export const SITE_TITLE = 'Продажа авто в Самаре, автоцентры и автосалоны Самары по продаже новых';
+export const SITE_NAME = 'Самарские автомобили';
+export const LEGAL_ENTITY = 'ООО «Юридическое название»';
+export const LEGAL_INN = '1234567890';
+export const LEGAL_CITY = 'г. Город'; 
 export const SITE_DESCR = 'Группа компаний «Самарские автомобили» предлагает новые авто в Самаре! Продажа новых автомобилей осуществляется на правах официального дилера в автосалонах Самары.'; // Описание сайта по умолчанию
 
 export const BRAND = 'Baic';
@@ -15,6 +16,14 @@ export const ASIDE_MENU = [
   {title: "Авто Уход", url: "/carcare"},
   {title: "Акции сервиса", url: "/spo_serv"},
   {title: "Спецпредложения", url: "/specials"},
+];
+
+export const CARS_MENU = [
+	{title: "Москвич", url: "/cars/moskvich", logo: "/img/brands/moskvich.jpg"},
+	{title: "Infiniti", url: "/cars/infiniti", logo: "/img/brands/infiniti.jpg"},
+	{title: "Jaguar", url: "/cars/jaguar", logo: "/img/brands/jaguar.jpg"},
+	{title: "Land Rover", url: "/cars/landrover", logo: "/img/brands/land-rover.jpg"},
+	{title: "Nissan", url: "/cars/nissan", logo: "/img/brands/nissan.jpg"},
 ];
 
 export const AGREE_LABEL = '<span>Я согласен на</span><a href="/privacy-policy" class="underline transition-all hover:no-underline" target="_blank">обработку персональных данных</a>';

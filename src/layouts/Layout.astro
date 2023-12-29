@@ -7,7 +7,7 @@ interface Props {
 }
 const {title, h1, description, image} = Astro.props;
 
-import {SITE_NAME, SITE_DESCR, BRAND} from '@/const.js';
+import {SITE_TITLE, SITE_NAME, SITE_DESCR} from '@/const.js';
 
 import Head from '@/components/Head.astro';
 import ScriptHead from '@/components/Scripts/Head.astro';
@@ -16,16 +16,19 @@ import ScriptBodyEnd from '@/components/Scripts/BodyEnd.astro';
 import Header from '@/components/Header/Header.astro';
 import Banner from '@/components/Banner/Banner.astro';
 import Aside from '@/components/Aside/Aside.astro';
-// import Footer from '@/components/Footer.astro';
+import Cars from '@/components/Cars/Cars.astro';
+import Adv from '@/components/Adv/Adv.astro';
+import Footer from '@/components/Footer/Footer.astro';
 // import Modals from '@/components/Modals.astro';
 // import UpBtn from '@/components/UpBtn.astro';
 // import Cookie from '@/components/Cookie/Cookie.astro';
+const pathname = Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
 <html lang="ru" class="h-full">
 	<head>
-		<Head title={title || h1 || SITE_NAME} description={description ?? SITE_DESCR} image={image} />
+		<Head title={title || h1 || SITE_TITLE} description={description ?? SITE_DESCR} image={image} />
 		<ScriptHead />
 	</head>
 <body
@@ -42,7 +45,7 @@ import Aside from '@/components/Aside/Aside.astro';
 		<div class="site-content">
 			<div class="container">
 				<Banner />
-<!-- CARS -->
+				<Cars />
 			<section class="py-5 lg:py-10">
 				<div 
 					class="grid grid-cols-6 xl:grid-cols-5" 
@@ -50,10 +53,12 @@ import Aside from '@/components/Aside/Aside.astro';
 					<Aside />
 					<div class="col-span-6 lg:col-span-4 lg:px-5">
 						<slot />
-<!-- ADV -->
-<!-- {% if page.url == '/' %}
-<p><b>«{{ site.name }}»</b> - это очевидный ответ на вопрос, если вы еще не решили где купить авто в Самаре.</p>
-{% endif %} -->
+						<Adv />
+						{
+							pathname === '/' && (
+							<p><b>«{SITE_NAME}»</b> - это очевидный ответ на вопрос, если вы еще не решили где купить авто в Самаре.</p>
+							)
+						}
 					</div>
 				</div>
 			</section>
@@ -61,7 +66,7 @@ import Aside from '@/components/Aside/Aside.astro';
 		</div>
 	</main>
 
-	<!-- FOOTER -->
+	<Footer />
 
 	<!-- MODALS CALLBACK -->
 	<!-- MODALS MESSAGE -->
