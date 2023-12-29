@@ -1,6 +1,8 @@
 import Swiper from "swiper";
 import { Navigation, Pagination, Autoplay, Parallax, Controller } from "swiper/modules";
 
+import "swiper/css/bundle";
+
 const progressCircle = document.querySelector(".autoplay-progress svg");
 const progressContent = document.querySelector(".autoplay-progress span");
 let bannerSlider;

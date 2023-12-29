@@ -7,13 +7,14 @@ interface Props {
 }
 const {title, h1, description, image} = Astro.props;
 
-import {SITE_NAME, SITE_DESCR} from '@/const.js';
+import {SITE_NAME, SITE_DESCR, BRAND} from '@/const.js';
 
 import Head from '@/components/Head.astro';
 import ScriptHead from '@/components/Scripts/Head.astro';
 import ScriptBodyBegin from '@/components/Scripts/BodyBegin.astro';
 import ScriptBodyEnd from '@/components/Scripts/BodyEnd.astro';
 import Header from '@/components/Header/Header.astro';
+import Banner from '@/components/Banner/Banner.astro';
 // import Footer from '@/components/Footer.astro';
 // import Modals from '@/components/Modals.astro';
 // import UpBtn from '@/components/UpBtn.astro';
@@ -39,7 +40,7 @@ import Header from '@/components/Header/Header.astro';
 	<main class="flex-grow">
 		<div class="site-content">
 			<div class="container">
-<!-- BANNER -->
+				<Banner />
 <!-- CARS -->
 			<section class="py-5 lg:py-10">
 				<div 
