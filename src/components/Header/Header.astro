@@ -2,24 +2,18 @@
 		<div class="container h-full">
 			<div class="flex items-center justify-between h-full py-3">
 
-				{% if page.url != '/' %}
 				<a href="/" class="logo">
-				{% else %}
-				<div class="logo">
-				{% endif %}
 					<span>
-						<img src="{{ 'img/logo.png' | relative_url }}" class="w-[100px] sm:w-[150px] md:w-[250px]" alt="Самарские Автомобили">
+						<img src="/img/logo.png" class="w-[100px] sm:w-[150px] md:w-[250px]" alt="Самарские Автомобили">
 					</span>
-					<span class="hidden md:block text-center text-xs text-gray-800 mt-2"><b>Москвич</b>, <b>Nissan</b>, <b>INFINITI</b>, <b>Jaguar</b>, <b>Land Rover</b> </span>
-					{% if page.url != '/' %}
-					</a>
-					{% else %}
-					</div>
-					{% endif %}
+					<span class="hidden md:block text-center text-xs text-gray-800 mt-2">
+						<b>Москвич</b>, <b>Nissan</b>, <b>INFINITI</b>, <b>Jaguar</b>, <b>Land Rover</b>
+					</span>
+				</a>
 
 				<div class="flex items-center">
 					<a href="https://vk.com/63cars" class="w-[24px] sm:w-[30px] md:w-[48px]" target="_blank">
-						<img src="{{ 'img/vk.svg' | relative_url }}" alt="VK" class="w-full h-auto">
+						<img src="/img/vk.svg" alt="VK" class="w-full h-auto">
 					</a>
 					<button
 						type="button"
