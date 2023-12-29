@@ -19,9 +19,8 @@ import Aside from '@/components/Aside/Aside.astro';
 import Cars from '@/components/Cars/Cars.astro';
 import Adv from '@/components/Adv/Adv.astro';
 import Footer from '@/components/Footer/Footer.astro';
-// import Modals from '@/components/Modals.astro';
-// import UpBtn from '@/components/UpBtn.astro';
-// import Cookie from '@/components/Cookie/Cookie.astro';
+import ModalCallback from '@/components/Modals/Callback.astro';
+import ModalMessage from '@/components/Modals/Message.astro';
 const pathname = Astro.url.pathname;
 ---
 
@@ -68,8 +67,8 @@ const pathname = Astro.url.pathname;
 
 	<Footer />
 
-	<!-- MODALS CALLBACK -->
-	<!-- MODALS MESSAGE -->
+	<ModalCallback />
+	<ModalMessage />
 
 	<ScriptBodyEnd />
 </body>
