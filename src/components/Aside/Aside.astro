@@ -17,7 +17,8 @@ const pathname = Astro.url.pathname;
 				ASIDE_MENU.map(link => (
 				<a 
 					href={link.url || '#'} 
-					class={`relative lg:text-lg p-3 block transition duration-300 ${pathname === link.url ? ' bg-cyan text-white' : ' hover:bg-gray-200'}` }
+					class={`relative lg:text-lg p-3 block transition duration-300 ${pathname === link.url ? ' bg-cyan text-white' : ' hover:bg-gray-200'}`}
+					target={link?.target && '_blank'}
 				>
 					{link.title}
 				</a>
