@@ -3,17 +3,17 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll site to Pages
+# Sample workflow for building and deploying a Astro site to GitHub Pages
+name: Deploy website to Pages
 
 on:
   workflow_run:
-    workflows: ["Generate Jekyll Files from XML"]  # Замените на имя вашего рабочего процесса update_cars
+    workflows: ["Generate Astro Files from XML"]  # Замените на имя вашего рабочего процесса обновления АВН
     types:
       - completed
   # Runs on pushes targeting the default branch
   push:
-    branches: ["master", "main"]
+    branches: ["master"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -35,6 +35,11 @@ jobs:
   build:
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
+
+    # Указываете окружение и его переменные
+    environment:
+      name: ${{ github.ref == 'refs/heads/main' && 'production' || 'development' }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -51,36 +56,29 @@ jobs:
             echo "Something found." && echo "changes=true" >> $GITHUB_ENV && echo "changes=true" >> $GITHUB_OUTPUT
           fi
 
-      - name: Setup Ruby
-        if: env.changes == 'true'
-        uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
-        with:
-          ruby-version: '3.1' # Not needed with a .ruby-version file
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          cache-version: 0 # Increment this number if you need to re-download cached gems
-
       - name: Setup Pages
         id: pages
         if: env.changes == 'true'
         uses: actions/configure-pages@v3
 
-      - name: Build with Jekyll
-        # Outputs to the './_site' directory by default
+      - name: Create env file
+        run: |
+          touch .env
+          echo PUBLIC_YANDEX_SITE_VERIFICATION=${{ vars.PUBLIC_YANDEX_SITE_VERIFICATION }} >> .env
+          echo PUBLIC_GOOGLE_SITE_VERIFICATION=${{ vars.PUBLIC_GOOGLE_SITE_VERIFICATION }} >> .env
+          cat .env
+
+      - name: Build Astro
         if: env.changes == 'true'
         run: |
           npm install -g pnpm
           pnpm install --no-frozen-lockfile
-          pnpm run start
-          pnpm run deploy
-          cd public
-          bundle exec jekyll build # --baseurl "${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: production
+          pnpm build --outDir ./_site
 
       - name: Upload artifact
         if: env.changes == 'true'
         # Automatically uploads an artifact from the './_site' directory by default
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
 
     outputs:
       changes: ${{ steps.check_changes.outputs.changes }}

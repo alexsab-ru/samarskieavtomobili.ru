@@ -1,0 +1,72 @@
+---
+interface Props {
+	title?: string;
+	h1?: string;
+	description?: string;
+	image?: string;
+}
+const {title, h1, description, image} = Astro.props;
+
+import {SITE_NAME, SITE_DESCR} from '@/const.js';
+
+import Head from '@/components/Head.astro';
+import ScriptHead from '@/components/Scripts/Head.astro';
+import ScriptBodyBegin from '@/components/Scripts/BodyBegin.astro';
+import ScriptBodyEnd from '@/components/Scripts/BodyEnd.astro';
+// import Header from '@/components/Header.astro';
+// import Footer from '@/components/Footer.astro';
+// import Modals from '@/components/Modals.astro';
+// import UpBtn from '@/components/UpBtn.astro';
+// import Cookie from '@/components/Cookie/Cookie.astro';
+---
+
+<!DOCTYPE html>
+<html lang="ru" class="h-full">
+	<head>
+		<Head title={title || h1 || SITE_NAME} description={description ?? SITE_DESCR} image={image} />
+		<ScriptHead />
+	</head>
+<body
+	class="flex flex-col min-h-full relative"
+	x-data
+	@keydown.escape="$store.state.isModalOpen = false"
+	:class="{'overflow-hidden md:pr-[17px]': $store.state.isModalOpen || $store.state.isResponseModalOpen}"
+>
+<ScriptBodyBegin />
+
+<!-- HEADER -->
+
+	<main class="flex-grow">
+		<div class="site-content">
+			<div class="container">
+<!-- BANNER -->
+<!-- CARS -->
+			<section class="py-5 lg:py-10">
+				<div 
+					class="grid grid-cols-6 xl:grid-cols-5" 
+					x-data="{submenu: false}">
+<!-- ASIDE -->
+					<div class="col-span-6 lg:col-span-4 lg:px-5">
+						<slot />
+<!-- ADV -->
+<!-- {% if page.url == '/' %}
+<p><b>«{{ site.name }}»</b> - это очевидный ответ на вопрос, если вы еще не решили где купить авто в Самаре.</p>
+{% endif %} -->
+					</div>
+				</div>
+			</section>
+			</div>
+		</div>
+	</main>
+
+	<!-- FOOTER -->
+
+	<!-- MODALS CALLBACK -->
+	<!-- MODALS MESSAGE -->
+
+	<ScriptBodyEnd />
+</body>
+</html>
+<style is:global lang="scss">
+	@import '@/scss/app.scss';
+</style>

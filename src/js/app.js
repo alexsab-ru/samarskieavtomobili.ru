@@ -5,7 +5,7 @@ import './modules/slider'
 
 (function(){
 
-window.Alpine = Alpine
+// window.Alpine = Alpine
 
 Alpine.store('state', {
 	menuOpen: false,
@@ -13,7 +13,7 @@ Alpine.store('state', {
 	isResponseModalOpen: false
 })
 
-Alpine.start()
+// Alpine.start()
 
 function asidePos(){
 	let WW = window.innerWidth;

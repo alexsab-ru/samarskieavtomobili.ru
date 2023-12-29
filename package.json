@@ -1,48 +1,31 @@
 {
-  "name": "Самарские автомобили",
+  "name": "Самарские-автомобили",
   "version": "1.0.0",
   "description": "Самарские автомобили",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "cd public && bundle install",
-    "vite_dev": "cd vite && APP_ENV=development vite dev --open --host --port 5133",
-    "vite_build": "cd vite && APP_ENV=production vite build",
-    "jekyll": "cd public && JEKYLL_ENV=development bundle exec jekyll serve --host $(ipconfig getifaddr en0) --port 5134 -l -o",
-    "jekyll_build": "cd public && JEKYLL_ENV=production bundle exec jekyll build",
-    "preview": "cd public && JEKYLL_ENV=production bundle exec jekyll serve --host $(ipconfig getifaddr en0) --port 5134 -l -o",
-    "dev": "concurrently \"cd vite && APP_ENV=development vite dev --host --port 5133\" \"cd public && JEKYLL_ENV=development bundle exec jekyll serve --host $(ipconfig getifaddr en0) --port 5134 -l -o\"",
-    "deploy": "cd vite && APP_ENV=production vite build && cd ../public && [ -d _data ] || mkdir _data && mv dist/manifest.json _data/manifest.json && rm -rf assets && mv dist/assets assets",
-    "build": "cd vite && APP_ENV=production vite build && cd ../public && [ -d _data ] || mkdir _data && mv dist/manifest.json _data/manifest.json && rm -rf assets && mv dist/assets assets && JEKYLL_ENV=production bundle exec jekyll build",
-    "\n# WINDOWS SCRIPTS:": "",
-    "vite_dev_win": "cd vite && cross-env APP_ENV=development vite dev --host --port 5133",
-    "vite_build_win": "cd vite && cross-env APP_ENV=production vite build",
-    "jekyll_win": "for /f \"tokens=2 delims=:\" %i in ('ipconfig ^| findstr \"IPv4 Address\"') do @set IP=%i && cd public && cross-env JEKYLL_ENV=development bundle exec jekyll serve --host %IP% --port 5134 -l -o",
-    "jekyll_build_win": "cd public && cross-env JEKYLL_ENV=production bundle exec jekyll build -l -o",
-    "preview_win": "for /f \"tokens=2 delims=:\" %i in ('ipconfig ^| findstr \"IPv4 Address\"') do @set IP=%i && cd public && cross-env JEKYLL_ENV=production bundle exec jekyll serve --host %IP% --port 5134 -l -o",
-    "dev_win": "for /f \"tokens=2 delims=:\" %i in ('ipconfig ^| findstr \"IPv4 Address\"') do @set IP=%i && concurrently \"cd vite && cross-env APP_ENV=development vite dev --host %IP% --port 5133\" \"cd public && cross-env JEKYLL_ENV=development bundle exec jekyll serve --host %IP% --port 5134 -l -o --incremental --trace\"",
-    "deploy_win": "cd vite && cross-env APP_ENV=production vite build && cd ../public && [ -d _data ] || mkdir _data && mv dist/manifest.json _data/manifest.json && rm -rf assets && mv dist/assets assets",
-    "build_win": "cd vite && cross-env APP_ENV=production vite build && cd ../public && [ -d _data ] || mkdir _data && mv dist/manifest.json _data/manifest.json &&  rm -rf assets && mv dist/assets assets && cross-env JEKYLL_ENV=production bundle exec jekyll build",
-    "\n# https://alexsab.t.me": ""
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^4.0.0",
-    "@vue/compiler-sfc": "^3.2.45",
-    "autoprefixer": "^10.4.14",
-    "concurrently": "^8.2.0",
-    "cross-env": "^7.0.3",
-    "postcss": "^8.4.25",
-    "sass": "^1.63.6",
-    "swiper": "^10.1.0",
-    "tailwindcss": "^3.3.2",
-    "vite": "^4.0.4",
-    "vite-plugin-live-reload": "^3.0.1"
+    "dev": "astro dev --open --host --config astro.local.config.mjs",
+    "start": "astro dev --open --host",
+    "build_local": "astro build --config astro.local.config.mjs",
+    "build": "astro build",
+    "preview": "astro preview --open --host",
+    "astro": "astro"
   },
   "dependencies": {
-    "@mdi/font": "^7.2.96",
-    "alpinejs": "^3.13.0",
-    "glightbox": "^3.2.0"
+    "@alexsab-ru/scripts": "^0.4.1",
+    "@astrojs/alpinejs": "^0.3.2",
+    "@astrojs/sitemap": "^3.0.4",
+    "@astrojs/tailwind": "^5.1.0",
+    "@types/alpinejs": "^3.13.5",
+    "alpinejs": "^3.13.3",
+    "astro": "^4.0.8",
+    "astro-icon": "^1.0.1",
+    "astro-robots": "^2.0.0",
+    "glightbox": "^3.2.0",
+    "swiper": "^10.1.0",
+    "tailwindcss": "^3.4.0"
+  },
+  "devDependencies": {
+    "sass": "^1.69.6"
   }
 }

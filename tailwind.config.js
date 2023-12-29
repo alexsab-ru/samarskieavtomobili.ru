@@ -1,14 +1,11 @@
 import defaultTheme from 'tailwindcss/defaultTheme'
 import colors from 'tailwindcss/colors'
 
-export const content = [
-	"../public/**/*.html",
-	'./src/js/**/*.js'
-]
+export const content = ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}']
 export const theme = {
 	container: {
 		center: true,
-		padding: '1rem',
+		padding: '1.25rem',
 	},
 	colors: {
 		blue: '#1b3252',
