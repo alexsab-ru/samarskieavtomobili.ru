@@ -1,11 +1,12 @@
 ---
 import { ASIDE_MENU } from '@/const'
 const pathname = Astro.url.pathname;
+import './aside.scss';
 ---
 
 <div class="col-span-6 lg:col-span-2 xl:col-span-1 mb-6 lg:mb-0 border-2 lg:border-0 lg:border-r lg:border-cyan">
 	<aside x-show="$store.state.menuOpen" x-cloak
-		x-transition:enter="transition-[height] duration-500"
+		x-transition:enter="transition-[height] duration-300"
 		x-transition:enter-start="h-0"
 		x-transition:enter-end="h-auto"
 		x-transition:leave="transition-[height]"
