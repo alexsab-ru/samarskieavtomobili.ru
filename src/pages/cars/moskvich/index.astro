@@ -1,0 +1,67 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { SITE_TITLE } from "@/const";
+---
+
+<Layout
+	title={`Автомобили Москвич в Самаре | ${SITE_TITLE}`}
+	image="/img/banners/moskvich-6.webp"
+>
+	<h1>Официальный дилерский центр Москвич</h1>
+
+	<!-- <img src="{{ 'img/banners/nissanugfasad.jpg' | relative_url }}" alt="Автомобили Москвич в Самаре" class="mb-5 object-cover object-center"> -->
+	<p>
+		<b>Адрес:</b> 443085, г. Самара, Южное шоссе, 12, строение 2.<br />
+		<b>Телефон:&nbsp;</b><a href="tel:+78469936600">+7 (846) 993-66-00</a
+		><br />
+		<b>e-mail:&nbsp;</b><a href="mailto:2047sales@sam-auto.ru"
+			><font color="blue">2047sales@sam-auto.ru</font></a
+		>, <a href="mailto:2047afs@sam-auto.ru"
+			><font color="blue">2047afs@sam-auto.ru</font></a
+		><br />
+		<b>Сайт:</b><a href="https://moskvich-samauto.ru/" target="_blank"
+			><font color="blue">moskvich-samauto.ru/</font></a
+		><b> </b><br />
+		<b>Часы работы:</b><br />Пн-Пт: 8:30 — 20:00 &nbsp;<br />
+		 Сб-Вс: 8:30 — 18:00 <br />
+		<a
+			href="#"
+			target="_blank"
+			@click.prevent="$refs.modalTitle.innerText='Записаться на тест-драйв'; $refs.brand.value = 'москвич'; $store.state.isModalOpen = true;"
+		>
+			<font color="blue">Записаться на тест-драйв »</font>
+		</a>
+	</p>
+
+	<h3>Схема проезда:</h3>
+	<div class="mb-5">
+		<script
+			type="text/javascript"
+			charset="utf-8"
+			async
+			src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abcc417e84cb6ccd3b8916ddef366adc653407c58afa4aaf101f736f18d02d542&width=100%25&height=400&lang=ru_RU&scroll=true"
+		></script>
+	</div>
+
+	<h3>Автомобили Москвич в Самаре</h3>
+	<p>
+		САМАРСКИЕ АВТОМОБИЛИ–&nbsp;официальный дилерский центр Москвич&nbsp;в
+		городе Самара – приветствует вас!
+	</p>
+	<p>
+		Своим клиентам мы предлагаем полный комплекс услуг, связанных с
+		приобретением, гарантийным&nbsp; и сервисным обслуживанием автомобилей
+		Москвич, реализацией оригинальных запчастей и аксессуаров.
+	</p>
+	<p>
+		Большой выбор автомобилей Москвич&nbsp;всех моделей и комплектаций
+		делает покупку автомобиля более удобной. Каждому клиенту доступен полный
+		комплекс услуг: Трейд-ин, выгодные программы кредитования, оформление в
+		лизинг, страхование.
+	</p>
+	<p>
+		Внимательные сотрудники помогут подобрать вам желаемый автомобиль,
+		подробно расскажут о его характеристиках, проведут тест-драйв.
+	</p>
+	<p>Добро пожаловать, в официальный дилерский центр САМАРСКИЕ АВТОМОБИЛИ!</p>
+</Layout>
