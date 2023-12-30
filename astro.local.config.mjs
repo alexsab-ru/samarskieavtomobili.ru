@@ -8,9 +8,7 @@ import robots from "astro-robots";
 // https://astro.build/config
 export default defineConfig({
 	integrations: [
-		tailwind({
-			configFile: './tailwind.config.js'
-		}),
+		tailwind(),
 		sitemap(),
 		robots(),
 		alpinejs(),
