@@ -1,0 +1,52 @@
+[
+	{
+		"show": false,
+		"title": "Госпрограмма на Москвич",
+		"url": "https://moskvich-samauto.ru/offers/avtomobili-moskvich-na-iuzhnom-shosse-stali-dostupnee-blagodaria-deistviiu-gosprogrammy/",
+		"img": "/img/banners/gosprogrammat.webp",
+		"target": "_blank",
+		"modalTitle": "",
+		"brandValue": "",
+		"autoplay": 4000
+	},
+	{
+		"show": false,
+		"title": "Москвич 3 от 330 рублей в день",
+		"url": "https://moskvich-samauto.ru/news/moskvich-3-ot-330-v-den/",
+		"img": "/img/banners/moskvich-3-ot-330-v-den.webp",
+		"target": "_blank",
+		"modalTitle": "",
+		"brandValue": "",
+		"autoplay": 4000
+	},
+	{
+		"show": true,
+		"title": "Москвич 6 в наличии",
+		"url": "https://moskvich-samauto.ru/models/moskvich-6/",
+		"img": "/img/banners/moskvich-6.webp",
+		"target": "_blank",
+		"modalTitle": "",
+		"brandValue": "",
+		"autoplay": 4000
+	},
+	{
+		"show": true,
+		"title": "Премиальные автомобили",
+		"url": "",
+		"img": "/img/banners/new_0.jpg",
+		"target": "",
+		"modalTitle": "Оставить заявку",
+		"brandValue": "landrover",
+		"autoplay": ""
+	},
+	{
+		"show": true,
+		"title": "Выкуп автомобилей всех марок",
+		"url": "",
+		"img": "/img/banners/new_5.jpg",
+		"target": "",
+		"modalTitle": "Оставить заявку",
+		"brandValue": "nissan",
+		"autoplay": ""
+	}
+]

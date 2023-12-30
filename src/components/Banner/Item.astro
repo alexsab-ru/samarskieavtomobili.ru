@@ -1,0 +1,36 @@
+---
+const { banner } = Astro.props;
+---
+{
+	banner.url ? (
+		<a 
+			href={banner.url} 
+			class="swiper-slide banner-slide" 
+			data-swiper-autoplay={banner?.autoplay} 
+			target={banner?.target}
+		>
+			<img
+				src={banner?.img}
+				class="absolute inset-0 h-full w-full object-cover object-center"
+				alt={banner?.title}
+				loading="lazy"
+			/>
+			<div class="swiper-lazy-preloader"></div>
+		</a>
+	) : (
+		<a 
+			href="#" 
+			class="swiper-slide banner-slide" 
+			data-swiper-autoplay={banner?.autoplay} 
+			@click.prevent={`$refs.modalTitle.innerText='${banner?.modalTitle}'; $refs.brand.value = '${banner?.brandValue}'; $store.state.isModalOpen = true;`}
+		>
+			<img
+				src={banner?.img}
+				class="absolute inset-0 h-full w-full object-cover object-center"
+				alt={banner?.title}
+				loading="lazy"
+			/>
+			<div class="swiper-lazy-preloader"></div>
+		</a>
+	)
+}

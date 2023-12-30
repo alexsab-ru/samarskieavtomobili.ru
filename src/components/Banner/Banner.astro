@@ -1,77 +1,40 @@
 ---
 import './banner.scss';
+import BannerItem from './Item.astro'
+import banners from '@/data/banners.json';
+const filteredBanners = banners.filter(banner => banner.show);
 ---
-
-<section class="banner relative">
-	<div class="banner-wrapper relative min-h-[100px] sm:min-h-[185px] md:min-h-[300px]">
-		<div class="relative end-0">
-			<div class="swiper banner-slider h-full text-white">
-				<div class="swiper-wrapper flex items-end">
-
-
-					<!-- <a href="https://moskvich-samauto.ru/offers/avtomobili-moskvich-na-iuzhnom-shosse-stali-dostupnee-blagodaria-deistviiu-gosprogrammy/" class="swiper-slide banner-slide" data-swiper-autoplay="4000">
-						<img
-							src="/img/banners/gosprogrammat.webp"
-							class="absolute inset-0 h-full w-full object-cover object-center"
-							alt="Госпрограмма на Москвич"
-							loading="lazy"
-						/>
-						<div class="swiper-lazy-preloader"></div>
-					</a>
-					<a href="https://moskvich-samauto.ru/news/moskvich-3-ot-330-v-den/" class="swiper-slide banner-slide" data-swiper-autoplay="4000">
-						<img
-							src="/img/banners/moskvich-3-ot-330-v-den.webp"
-							class="absolute inset-0 h-full w-full object-cover object-center"
-							alt="Москвич 3 от 330 рублей в день"
-							loading="lazy"
-						/>
-						<div class="swiper-lazy-preloader"></div>
-					</a> -->
-					<a href="https://moskvich-samauto.ru/models/moskvich-6/" class="swiper-slide banner-slide" data-swiper-autoplay="4000">
-						<img
-							src="/img/banners/moskvich-6.webp"
-							class="absolute inset-0 h-full w-full object-cover object-center"
-							alt="Москвич 6 в наличии"
-							loading="lazy"
-						/>
-						<div class="swiper-lazy-preloader"></div>
-					</a>
-					<a href="#" class="swiper-slide banner-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку'; $refs.brand.value = 'landrover'; $store.state.isModalOpen = true;">
-						<img
-							src="/img/banners/new_0.jpg"
-							class="absolute inset-0 h-full w-full object-cover object-center"
-							alt="Премиальные автомобили"
-							loading="lazy"
-						/>
-						<div class="swiper-lazy-preloader"></div>
-					</a>
-					<a href="#" class="swiper-slide banner-slide" @click.prevent="$refs.modalTitle.innerText='Оставить заявку на выкуп авто'; $refs.brand.value = 'nissan'; $store.state.isModalOpen = true;">
-						<img
-							src="/img/banners/new_5.jpg"
-							class="absolute inset-0 h-full w-full object-cover object-center"
-							alt="Выкуп автомобилей всех марок"
-							loading="lazy"
-						/>
-						<div class="swiper-lazy-preloader"></div>
-					</a>
-
+{
+	filteredBanners && (
+	<section class="banner relative">
+		<div class="banner-wrapper relative min-h-[100px] sm:min-h-[185px] md:min-h-[300px]">
+			<div class="relative end-0">
+				<div class="swiper banner-slider h-full text-white">
+					<div class="swiper-wrapper flex items-end">
+						{
+							filteredBanners.map(banner => (
+								<BannerItem banner={banner} />
+							))
+						}
+					</div>
 				</div>
+
+				<div class="swiper-pagination banner-pagination"></div>
+
+				<div class="autoplay-progress">
+					<svg viewBox="0 0 48 48">
+						<circle cx="24" cy="24" r="20"></circle>
+					</svg>
+					<span></span>
+				</div>
+
+				<div class="swiper-button-prev banner-button-prev !hidden md:!flex"></div>
+				<div class="swiper-button-next banner-button-next !hidden md:!flex"></div>
 			</div>
-
-			<div class="swiper-pagination banner-pagination"></div>
-
-			<div class="autoplay-progress">
-				<svg viewBox="0 0 48 48">
-					<circle cx="24" cy="24" r="20"></circle>
-				</svg>
-				<span></span>
-			</div>
-
-			<div class="swiper-button-prev banner-button-prev !hidden md:!flex"></div>
-			<div class="swiper-button-next banner-button-next !hidden md:!flex"></div>
 		</div>
-	</div>
-</section>
+	</section>
+	)
+}
 
 <script>
 	import './banner'
