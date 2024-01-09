@@ -20,7 +20,8 @@ import {AGREE_LABEL} from '@/const'
 		<form>
 			<input type="text" tabindex="-1" placeholder="Ваше имя" name="name">
 			<input type="email" tabindex="-1" name="Email" placeholder="mail@example.com">
-			<input type="tel" placeholder="8 999 999-99-99" name="phone" class="w-full mb-5 px-2 py-3 border border-gray-400 focus:border-gray-600 focus:outline-none" required placeholder="Ваш телефон *">
+			<input type="tel" placeholder="8 999 999-99-99" name="phone" class="w-full px-2 py-3 border border-gray-400 focus:border-gray-600 focus:outline-none" required placeholder="Ваш телефон *">
+			<div class="error-message text-xs text-accent hidden phone"></div>
 			<input type="text" tabindex="-1" name="brand" x-ref="brand">
 			<Checkbox
 				name="agree"
@@ -30,7 +31,7 @@ import {AGREE_LABEL} from '@/const'
 				errorClasses="text-red-500 w-full"
 				errorText="Чтобы продолжить, установите флажок"
 			/>
-			<button type="submit" class="w-full bg-cyan text-white text-base px-2 py-3 border border-cyan mb-5">Отправить</button>
+			<button type="submit" class="w-full bg-cyan text-white text-base mt-5 px-2 py-3 border border-cyan mb-5">Отправить</button>
 		</form>
 
 	</div>
