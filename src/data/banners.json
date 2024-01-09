@@ -35,7 +35,7 @@
 		"url": "",
 		"img": "/img/banners/new_0.jpg",
 		"target": "",
-		"modalTitle": "Оставить заявку",
+		"modalTitle": "Оставить заявку на премиальный автомобиль",
 		"brandValue": "landrover",
 		"autoplay": ""
 	},
@@ -45,7 +45,7 @@
 		"url": "",
 		"img": "/img/banners/new_5.jpg",
 		"target": "",
-		"modalTitle": "Оставить заявку",
+		"modalTitle": "Оставить заявку на выкуп",
 		"brandValue": "nissan",
 		"autoplay": ""
 	}
