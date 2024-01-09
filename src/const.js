@@ -26,5 +26,5 @@ export const CARS_MENU = [
 	{title: "Nissan", url: "/cars/nissan", logo: "/img/brands/nissan.jpg"},
 ];
 
-export const AGREE_LABEL = '<span>Я согласен на</span><a href="/privacy-policy" class="underline transition-all hover:no-underline" target="_blank">обработку персональных данных</a>';
+export const AGREE_LABEL = '<span>Я согласен на</span><a href="/agreement" class="underline transition-all hover:no-underline" target="_blank">обработку персональных данных</a>';
 export const FOOTER_INFO = '<sup>*</sup> Вся представленная на сайте информация, касающаяся автомобилей и сервисного обслуживания, носит информационный характер и не является публичной офертой, определяемой положениями ст. 437 ГК РФ. Все цены, указанные на данном сайте, носят информационный характер. Для получения подробной информации просьба обращаться к менеджерам отдела продаж по номеру телефона <a href="tel:+79991234567">+7&nbsp;(999) 123-45-67</a>. Опубликованная на данном сайте информация может быть изменена в любое время без предварительного уведомления.';
