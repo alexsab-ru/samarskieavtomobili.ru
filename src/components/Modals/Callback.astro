@@ -1,3 +1,7 @@
+---
+import Checkbox from '@/components/Checkbox/Checkbox.astro';
+import {AGREE_LABEL} from '@/const'
+---
 	<div
 	class="overflow-y-auto"
 	style="background-color: rgba(0,0,0,0.8)"
@@ -18,9 +22,15 @@
 			<input type="email" tabindex="-1" name="Email" placeholder="mail@example.com">
 			<input type="tel" placeholder="8 999 999-99-99" name="phone" class="w-full mb-5 px-2 py-3 border border-gray-400 focus:border-gray-600 focus:outline-none" required placeholder="Ваш телефон *">
 			<input type="text" tabindex="-1" name="brand" x-ref="brand">
-
+			<Checkbox
+				name="agree"
+				label={AGREE_LABEL}
+				color="black"
+				required
+				errorClasses="text-red-500 w-full"
+				errorText="Чтобы продолжить, установите флажок"
+			/>
 			<button type="submit" class="w-full bg-cyan text-white text-base px-2 py-3 border border-cyan mb-5">Отправить</button>
-			<small class="block text-xs text-center text-gray-800">Нажимая на кнопку действия, я соглашаюсь на <br><a href="./agreement/" target="_blank" class="text-cyan underline transition hover:no-underline">обработку персональных данных</a></small>
 		</form>
 
 	</div>

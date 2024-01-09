@@ -1,0 +1,48 @@
+---
+interface Props {
+	type?: any;
+	name?: string;
+	value?: string;
+	label?: string;
+	color?: string;
+	required?: boolean;
+	errorText?: string;
+	errorClasses?: string;
+	classes?: string;
+}
+const {
+	type = 'checkbox',
+	name,
+	value,
+	label = '<span>LABEL</span>',
+	color = 'white',
+	required = false,
+	errorText = '',
+	errorClasses = '',
+	classes = '',
+} = Astro.props;
+import './checkbox.scss';
+---
+
+<label class={'cursor-pointer text-xs text-gray-800 flex items-center flex-wrap mt-5 ' + classes}>
+	<input
+		type={type}
+		name={name}
+		value={value}
+		checked
+		class="absolute w-0 h-0 opacity-0 invisible"
+	/>
+	<div class={`flex items-center flex-wrap gap-x-2 text-${color}/80`}>
+		<span class={`fake-${type}-${color}`}></span>
+		<Fragment set:html={label} />
+	</div>
+	{
+		required ? (
+			<div class={`error-message text-xs hidden ${name} ${errorClasses}`}>
+				{errorText}
+			</div>
+		) : (
+			''
+		)
+	}
+</label>
