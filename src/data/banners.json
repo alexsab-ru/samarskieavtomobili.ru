@@ -1,5 +1,45 @@
 [
 	{
+		"show": true,
+		"title": "Москвич 3 от 1 600 000 ₽",
+		"url": "https://moskvich-samauto.ru/offers/moskvich-3-ot-1-600-000/",
+		"img": "/img/banners/moskvich-3-new-16-01-2024.webp",
+		"target": "_blank",
+		"modalTitle": "",
+		"brandValue": "",
+		"autoplay": 5000
+	},
+	{
+		"show": true,
+		"title": "Москвич 6 в наличии",
+		"url": "https://moskvich-samauto.ru/models/moskvich-6/",
+		"img": "/img/banners/moskvich-6-new-16-01-2024.webp",
+		"target": "_blank",
+		"modalTitle": "",
+		"brandValue": "",
+		"autoplay": 5000
+	},
+	{
+		"show": true,
+		"title": "Прием Вашего авто на комиссию",
+		"url": "",
+		"img": "/img/banners/shapka_avto_na_komissiyu_i_vykup.webp",
+		"target": "",
+		"modalTitle": "Прием Вашего авто на&nbsp;комиссию, а&nbsp;также на&nbsp;быстрый выкуп",
+		"brandValue": "nissan",
+		"autoplay": 5000
+	},
+	{
+		"show": true,
+		"title": "Премиальные автомобили",
+		"url": "",
+		"img": "/img/banners/new_0.jpg",
+		"target": "",
+		"modalTitle": "Оставить заявку на премиальный автомобиль",
+		"brandValue": "landrover",
+		"autoplay": 5000
+	},
+	{
 		"show": false,
 		"title": "Госпрограмма на Москвич",
 		"url": "https://moskvich-samauto.ru/offers/avtomobili-moskvich-na-iuzhnom-shosse-stali-dostupnee-blagodaria-deistviiu-gosprogrammy/",
@@ -11,36 +51,6 @@
 	},
 	{
 		"show": false,
-		"title": "Москвич 3 от 330 рублей в день",
-		"url": "https://moskvich-samauto.ru/news/moskvich-3-ot-330-v-den/",
-		"img": "/img/banners/moskvich-3-ot-330-v-den.webp",
-		"target": "_blank",
-		"modalTitle": "",
-		"brandValue": "",
-		"autoplay": 4000
-	},
-	{
-		"show": true,
-		"title": "Москвич 6 в наличии",
-		"url": "https://moskvich-samauto.ru/models/moskvich-6/",
-		"img": "/img/banners/moskvich-6.webp",
-		"target": "_blank",
-		"modalTitle": "",
-		"brandValue": "",
-		"autoplay": 4000
-	},
-	{
-		"show": true,
-		"title": "Премиальные автомобили",
-		"url": "",
-		"img": "/img/banners/new_0.jpg",
-		"target": "",
-		"modalTitle": "Оставить заявку на премиальный автомобиль",
-		"brandValue": "landrover",
-		"autoplay": ""
-	},
-	{
-		"show": true,
 		"title": "Выкуп автомобилей всех марок",
 		"url": "",
 		"img": "/img/banners/new_5.jpg",
