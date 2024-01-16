@@ -22,7 +22,7 @@ const { banner } = Astro.props;
 			href="#" 
 			class="swiper-slide banner-slide" 
 			data-swiper-autoplay={banner?.autoplay} 
-			@click.prevent={`$refs.modalTitle.innerText='${banner?.modalTitle}'; $refs.brand.value = '${banner?.brandValue}'; $store.state.isModalOpen = true;`}
+			@click.prevent={`$refs.modalTitle.innerHTML='${banner?.modalTitle}'; $refs.brand.value = '${banner?.brandValue}'; $store.state.isModalOpen = true;`}
 		>
 			<img
 				src={banner?.img}
