@@ -11,6 +11,16 @@
 	},
 	{
 		"show": true,
+		"title": "Тест-драйв со звездой",
+		"url": "https://moskvich-auto.ru/buyers/test-drive-so-zvezdoi",
+		"img": "/img/banners/photo_2024-01-28 18.26.47.webp",
+		"target": "_blank",
+		"modalTitle": "",
+		"brandValue": "",
+		"autoplay": 5000
+	},
+	{
+		"show": true,
 		"title": "Москвич 6 в наличии",
 		"url": "https://moskvich-samauto.ru/models/moskvich-6/",
 		"img": "/img/banners/moskvich-6-new-16-01-2024.webp",
