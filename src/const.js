@@ -19,6 +19,7 @@ export const ASIDE_MENU = [
 ];
 
 export const CARS_MENU = [
+	{title: "Oting", url: "/cars/oting", logo: "/img/brands/oting.jpg"},
 	{title: "Москвич", url: "/cars/moskvich", logo: "/img/brands/moskvich.jpg"},
 	{title: "Infiniti", url: "/cars/infiniti", logo: "/img/brands/infiniti.jpg"},
 	{title: "Jaguar", url: "/cars/jaguar", logo: "/img/brands/jaguar.jpg"},
