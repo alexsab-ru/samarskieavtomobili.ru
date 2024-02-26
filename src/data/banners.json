@@ -20,7 +20,7 @@
 		"autoplay": 5000
 	},
 	{
-		"show": true,
+		"show": false,
 		"title": "Тест-драйв со звездой",
 		"url": "https://moskvich-auto.ru/buyers/test-drive-so-zvezdoi",
 		"img": "/img/banners/2024_01_28-photo_2024-01-28 18.26.47.webp",
