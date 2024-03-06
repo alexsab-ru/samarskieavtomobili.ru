@@ -1,19 +1,19 @@
 [
 	{
 		"show": true,
-		"title": "Москвич 3 от 1 600 000 ₽",
-		"url": "",
-		"img": "/img/banners/2024_02_05-Oting.webp",
+		"title": "Oting Паладин",
+		"url": "https://oting-samauto.ru/",
+		"img": "/img/banners/2024-03-06-oting-paladin.webp",
 		"target": "_blank",
-		"modalTitle": "Узнать подробнее про Oting Паладин",
+		"modalTitle": "",
 		"brandValue": "oting",
 		"autoplay": 5000
 	},
 	{
 		"show": true,
-		"title": "Москвич 3 от 1 600 000 ₽",
-		"url": "https://moskvich-samauto.ru/offers/moskvich-3-ot-1-600-000/",
-		"img": "/img/banners/2024_01_28-moskvich-3-new-16-01-2024.webp",
+		"title": "Москвич 3 от 1 530 000 ₽",
+		"url": "https://moskvich-samauto.ru/offers/moskvich-3-ot-1-530-000/",
+		"img": "/img/banners/2024-03-06-m3.webp",
 		"target": "_blank",
 		"modalTitle": "",
 		"brandValue": "",
