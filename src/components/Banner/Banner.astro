@@ -11,6 +11,11 @@ const filteredBanners = banners.filter(banner => banner.show);
 			<div class="relative end-0">
 				<div class="swiper banner-slider h-full text-white">
 					<div class="swiper-wrapper flex items-end">
+						<a href="https://oting-samauto.ru/" class="swiper-slide banner-slide relative h-full" target="_blank" data-swiper-autoplay="16000">
+							<video muted loop autoplay poster="/img/banners/2024-03-06-oting-paladin.webp" class="aspect-square sm:aspect-video md:aspect-[21/9] h-full w-full object-cover"> 
+								<source src="https://alexsab.ru/video/oting-samarskieavtomobili.mp4" type="video/mp4" /> 
+							</video>
+						</a>
 						{
 							filteredBanners.map(banner => (
 								<BannerItem banner={banner} />
