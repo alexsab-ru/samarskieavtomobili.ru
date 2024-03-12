@@ -62,11 +62,11 @@
 	{
 		"show": false,
 		"title": "Госпрограмма на Москвич",
-		"url": "https://moskvich-samauto.ru/offers/avtomobili-moskvich-na-iuzhnom-shosse-stali-dostupnee-blagodaria-deistviiu-gosprogrammy/",
+		"url": "",
 		"img": "/img/banners/2023_10_30-gosprogrammat.webp",
-		"target": "_blank",
-		"modalTitle": "",
-		"brandValue": "",
+		"target": "",
+		"modalTitle": "Госпрограмма на Москвич",
+		"brandValue": "moskvich",
 		"autoplay": 5000
 	},
 	{
