@@ -40,7 +40,14 @@ const initSlider = (num = 0, loop) => {
 			init(s) {
 				const videoSlide = s.slides[0].querySelector('video');
 				if(videoSlide){
-					videoSlide.play();					
+					const promise = videoSlide.play();
+					if (promise !== undefined) {
+						promise.then(_ => {
+							// Автовоспроизведение началось
+						}).catch(error => {
+							videoSlide.controls = true;
+						});
+					}				
 				}
 			},
 			autoplayTimeLeft(s, time, progress) {
