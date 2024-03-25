@@ -1,6 +1,16 @@
 [
 	{
 		"show": true,
+		"title": "Oting Тест-драйв",
+		"url": "https://oting-samauto.ru/customers/test-drive/",
+		"img": "/img/banners/oting-test-drive.webp",
+		"target": "_blank",
+		"modalTitle": "",
+		"brandValue": "oting",
+		"autoplay": 5000
+	},
+	{
+		"show": true,
 		"title": "Oting Паладин",
 		"url": "https://oting-samauto.ru/",
 		"img": "/img/banners/2024-03-06-oting-paladin.webp",
