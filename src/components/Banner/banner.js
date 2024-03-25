@@ -37,6 +37,12 @@ const initSlider = (num = 0, loop) => {
 			prevEl: ".swiper-button-prev",
 		},
 		on: {
+			init(s) {
+				const videoSlide = s.slides[0].querySelector('video');
+				if(videoSlide){
+					videoSlide.play();					
+				}
+			},
 			autoplayTimeLeft(s, time, progress) {
 				progressCircle.style.setProperty("--progress", 1 - progress);
 				progressContent.textContent = `${Math.ceil(time / 1000)}с.`;
