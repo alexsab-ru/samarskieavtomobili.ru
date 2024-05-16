@@ -16,6 +16,11 @@ const filteredBanners = banners.filter(banner => banner.show);
 								<source src="https://alexsab.ru/video/oting-samarskieavtomobili.mp4" type="video/mp4" /> 
 							</video>
 						</a>
+						<a href="https://moskvich-samauto.ru/models/moskvich-6/" class="swiper-slide banner-slide relative h-full" target="_blank" data-swiper-autoplay="14000">
+							<video autoplay muted playsinline loop poster="/img/banners/2024_01_28-moskvich-6-new-16-01-2024.webp" class="aspect-square sm:aspect-video md:aspect-[21/9] h-full w-full object-cover">
+								<source src="https://alexsab.ru/video/moskvich-6.mp4" type="video/mp4" />
+							</video>
+						</a>
 						{
 							filteredBanners.map(banner => (
 								<BannerItem banner={banner} />
