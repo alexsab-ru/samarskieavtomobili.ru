@@ -16,11 +16,20 @@ const filteredBanners = banners.filter(banner => banner.show);
 								<source src="https://alexsab.ru/video/oting-samarskieavtomobili.mp4" type="video/mp4" />
 							</video>
 						</a>
-						<a href="https://moskvich-samauto.ru/models/moskvich-6/" class="swiper-slide banner-slide relative h-full" target="_blank" data-swiper-autoplay="14000">
+						<div class="swiper-slide banner-slide relative h-full" data-swiper-autoplay="14000">
 							<video autoplay muted playsinline loop poster="/img/banners/2024_01_28-moskvich-6-new-16-01-2024.webp" class="aspect-square sm:aspect-video md:aspect-[21/9] h-full w-full object-cover">
 								<source src="https://alexsab.ru/video/moskvich-6.mp4" type="video/mp4" />
 							</video>
-						</a>
+							<div class="absolute inset-0 md:pl-[5vw] flex flex-col justify-end items-center md:items-start h-full py-16 lg:py-20 z-50">
+								<a
+									href="https://moskvich-samauto.ru/models/moskvich-6/"
+									target="_blank"
+									class="bg-[#ec1b24] text-white lg:text-lg p-1 sm:px-3 sm:py-2 md:py-3 md:px-10 ml-2 md:ml-3 outline-none inline-block w-fit"
+								>
+									Москвич 6 по выгодной цене
+								</a>
+							</div>
+						</div>
 						{
 							filteredBanners.map(banner => (
 								<BannerItem banner={banner} />
