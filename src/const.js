@@ -19,6 +19,7 @@ export const ASIDE_MENU = [
 ];
 
 export const CARS_MENU = [
+	{title: "Пробег Центр", url: "https://probegcentr.ru/", logo: "/img/brands/probeg-center.jpg", target: "_blank"},
 	{title: "Oting", url: "/cars/oting", logo: "/img/brands/oting.jpg"},
 	{title: "Москвич", url: "/cars/moskvich", logo: "/img/brands/moskvich.jpg"},
 	{title: "Infiniti", url: "/cars/infiniti", logo: "/img/brands/infiniti.jpg"},
