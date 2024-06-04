@@ -1,5 +1,6 @@
 ---
 import './header.scss';
+import { Icon } from 'astro-icon/components'
 ---
 <header class="header sticky top-0 w-full bg-white z-30 shadow-lg" id="header">
 	<div class="container h-full">
@@ -20,24 +21,31 @@ import './header.scss';
 				</span>
 			</a>
 
-			<div class="flex items-center">
+			<div class="flex items-center flex-nowrap gap-2 md:gap-3">
+				<a
+					href="https://t.me/samarskieavtomobili"
+					class="w-[24px] sm:w-[30px] md:w-[48px]"
+					target="_blank"
+				>
+					<Icon name="telegram-full" class="w-full h-full" />
+				</a>
 				<a
 					href="https://vk.com/63cars"
 					class="w-[24px] sm:w-[30px] md:w-[48px]"
 					target="_blank"
 				>
-					<img src="/img/vk.svg" alt="VK" class="w-full h-auto" />
+					<Icon name="vk" class="w-full h-full" />
 				</a>
 				<button
 					type="button"
-					class="bg-cyan text-white text-xs md:text-base p-1 sm:px-3 sm:py-2 md:py-3 md:px-10 ml-2 md:ml-3 outline-none"
+					class="bg-cyan text-white text-xs md:text-base p-1 sm:px-3 sm:py-2 md:py-3 md:px-10 outline-none hidden"
 					@click="$refs.modalTitle.innerText='Обратная связь'; $refs.brand.value = 'Обратная связь'; $store.state.isModalOpen = true;"
 				>
 					Обратная связь
 				</button>
 
 				<button
-					class="ml-2 md:ml-3 w-[24px] sm:w-[30px] md:w-[48px] h-[24px] sm:h-[30px] md:h-[48px] rounded-md sm:rounded-lg md:rounded-xl lg:hidden border"
+					class="w-[24px] sm:w-[30px] md:w-[48px] h-[24px] sm:h-[30px] md:h-[48px] rounded-md sm:rounded-lg md:rounded-xl lg:hidden border"
 					@click="$store.state.menuOpen = !$store.state.menuOpen"
 				>
 					<svg
