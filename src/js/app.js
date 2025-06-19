@@ -1,8 +1,10 @@
 import Alpine from 'alpinejs'
 
-import { connectForms } from '@alexsab-ru/scripts';
+import { connectForms, cookiecook } from '@alexsab-ru/scripts';
 
 (function(){
+
+cookiecook();
 
 // window.Alpine = Alpine
 
