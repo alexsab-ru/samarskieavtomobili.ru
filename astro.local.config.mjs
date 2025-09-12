@@ -4,7 +4,7 @@ import alpinejs from "@astrojs/alpinejs";
 import sitemap from "@astrojs/sitemap";
 import robots from "astro-robots";
 import icon from "astro-icon";
-// import mdx from "@astrojs/mdx";
+import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,7 +14,7 @@ export default defineConfig({
 		robots(),
 		alpinejs(),
 		icon(),
-		// mdx()
+		mdx()
 	],
 	// site: 'https://alexsab-ru.github.io',
 	// base: 'astro-website'
