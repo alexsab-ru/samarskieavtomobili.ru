@@ -15,9 +15,9 @@ import { SITE_TITLE } from "@/const";
 		class="mb-5 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-4 text-xs sm:text-base"
 	>
 		<a
-			href="https://www.landroversamara.ru/ownership/owner/special-programs/"
+			href="#"
 			class="text-gray-800 flex flex-col items-center text-center underline hover:no-underline"
-			target="_blank"
+			@click.prevent="$refs.modalTitle.innerText='Узнать о специальных предложениях для владельцев Land Rover'; $refs.brand.value='landrover'; $store.state.isModalOpen=true;"
 		>
 			<img
 				src="/img/pages/spo_serv/land-rover.webp"
@@ -27,9 +27,9 @@ import { SITE_TITLE } from "@/const";
 			<b class="">Для владельцев Land&nbsp;Rover</b>
 		</a>
 		<a
-			href="https://www.jaguarsamara.ru/ownership/for-owner/service-special-programs/"
+			href="#"
 			class="text-gray-800 flex flex-col items-center text-center underline hover:no-underline"
-			target="_blank"
+			@click.prevent="$refs.modalTitle.innerText='Узнать о специальных предложениях для владельцев Jaguar'; $refs.brand.value='jaguar'; $store.state.isModalOpen=true;"
 		>
 			<img
 				src="/img/pages/spo_serv/jaguar.webp"
@@ -39,9 +39,9 @@ import { SITE_TITLE } from "@/const";
 			<b class="">Для владельцев Jaguar</b>
 		</a>
 		<a
-			href="https://nissansamara.ru/specials/service-maintenance/"
+			href="#"
 			class="text-gray-800 flex flex-col items-center text-center underline hover:no-underline"
-			target="_blank"
+			@click.prevent="$refs.modalTitle.innerText='Узнать о специальных предложениях для владельцев Nissan'; $refs.brand.value='nissan'; $store.state.isModalOpen=true;"
 		>
 			<img
 				src="/img/pages/spo_serv/nissan.webp"
@@ -51,9 +51,9 @@ import { SITE_TITLE } from "@/const";
 			<b class="">Для владельцев Nissan</b>
 		</a>
 		<a
-			href="https://infiniti-samauto.ru/special-offers/"
+			href="#"
 			class="text-gray-800 flex flex-col items-center text-center underline hover:no-underline"
-			target="_blank"
+			@click.prevent="$refs.modalTitle.innerText='Узнать о специальных предложениях для владельцев INFINITI'; $refs.brand.value='infiniti'; $store.state.isModalOpen=true;"
 		>
 			<img
 				src="/img/pages/spo_serv/infiniti.webp"
@@ -63,9 +63,9 @@ import { SITE_TITLE } from "@/const";
 			<b class="">Для владельцев INFINITI</b>
 		</a>
 		<a
-			href="https://moskvich-samauto.ru/customers/promotions/"
+			href="#"
 			class="text-gray-800 flex flex-col items-center text-center underline hover:no-underline"
-			target="_blank"
+			@click.prevent="$refs.modalTitle.innerText='Узнать о специальных предложениях для владельцев Москвич'; $refs.brand.value='moskvich'; $store.state.isModalOpen=true;"
 		>
 			<img
 				src="/img/pages/spo_serv/moskvich.webp"
