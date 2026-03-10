@@ -12,10 +12,10 @@
 	{
 		"show": true,
 		"title": "Oting Паладин",
-		"url": "https://oting-samauto.ru/",
+		"url": "",
 		"img": "/img/banners/2024-03-06-oting-paladin.webp",
-		"target": "_blank",
-		"modalTitle": "",
+		"target": "",
+		"modalTitle": "Oting Паладин",
 		"brandValue": "oting",
 		"autoplay": 5000
 	},
