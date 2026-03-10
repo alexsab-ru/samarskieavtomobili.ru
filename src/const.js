@@ -10,7 +10,7 @@ export const BRAND = 'Baic';
 export const ASIDE_MENU = [
   {title: "Главная", url: "/"},
   {title: "Автоцентр на Южном шоссе", url: "/centers/south"},
-  {title: "Кредит и лизинг", url: "/credit"},
+  // {title: "Кредит и лизинг", url: "/credit"},
   {title: "Автомобили с пробегом", url: "https://www.avito.ru/brands/i7669364?src=sharing", target: true},
   {title: "О компании", url: "/about"},
   {title: "Авто Уход", url: "/carcare"},
