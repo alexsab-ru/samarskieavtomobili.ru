@@ -50,7 +50,7 @@
 		"autoplay": 5000
 	},
 	{
-		"show": true,
+		"show": false,
 		"title": "Прием Вашего авто на комиссию",
 		"url": "",
 		"img": "/img/banners/2024_01_28-shapka_avto_na_komissiyu_i_vykup.webp",
